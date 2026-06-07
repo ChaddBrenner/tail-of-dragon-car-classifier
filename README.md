@@ -5,8 +5,9 @@ model classifies images into eight gallery labels: `bmw`, `corvette`, `honda`,
 `jeep`, `miata`, `mustang`, `porsche`, and `vw`.
 
 The website is intentionally gallery-only. Visitors choose curated validation
-photos and see the model's full ranked probability weights. There is no upload
-endpoint, no public inference API, no database, and no user accounts.
+photos, refresh through a larger static photo pool, and see the model's full
+ranked probability weights. There is no upload endpoint, no public inference
+API, no database, and no user accounts.
 
 ## Results
 
@@ -93,7 +94,7 @@ Generate reports from saved predictions:
 
 ```powershell
 .\.venv\Scripts\python.exe training\export_model.py --checkpoint runs\final_convnext_tiny\final_00_convnext_tiny_288\best.pt
-.\.venv\Scripts\python.exe training\build_gallery.py --data-dir ..\train_validation --checkpoint runs\final_convnext_tiny\final_00_convnext_tiny_288\best.pt --samples-per-class 6
+.\.venv\Scripts\python.exe training\build_gallery.py --data-dir ..\train_validation --checkpoint runs\final_convnext_tiny\final_00_convnext_tiny_288\best.pt --samples-per-class 24 --display-count 48
 cd web
 npm ci
 npm run build

@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { BarChart3, Gauge, ImageIcon } from "lucide-react";
+import { BarChart3, Gauge, ImageIcon, RefreshCw } from "lucide-react";
 import "./styles.css";
 
 type Probability = {
@@ -25,6 +25,11 @@ type AppData = {
     best_epoch?: number;
     metrics: Record<string, number>;
   };
+  gallery?: {
+    display_count: number;
+    pool_size: number;
+    samples_per_class: number;
+  };
   samples: Sample[];
 };
 
@@ -38,29 +43,61 @@ const fallbackData: AppData = {
   samples: []
 };
 
+const DEFAULT_DISPLAY_COUNT = 48;
+
 function pct(value: number | undefined) {
   return `${Math.round((value ?? 0) * 1000) / 10}%`;
+}
+
+function pickGalleryPage(samples: Sample[], classes: string[], displayCount: number, page: number) {
+  if (samples.length <= displayCount) return samples;
+  const perClass = Math.max(1, Math.floor(displayCount / Math.max(classes.length, 1)));
+  const picked: Sample[] = [];
+  for (const className of classes) {
+    const group = samples.filter((sample) => sample.true_class === className);
+    if (!group.length) continue;
+    const offset = (page * perClass) % group.length;
+    for (let i = 0; i < Math.min(perClass, group.length); i += 1) {
+      picked.push(group[(offset + i) % group.length]);
+    }
+  }
+  if (picked.length >= displayCount) return picked.slice(0, displayCount);
+  const used = new Set(picked.map((sample) => sample.id));
+  const remaining = samples.filter((sample) => !used.has(sample.id));
+  return [...picked, ...remaining.slice(0, displayCount - picked.length)];
 }
 
 function App() {
   const [data, setData] = useState<AppData>(fallbackData);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [galleryPage, setGalleryPage] = useState(0);
 
   useEffect(() => {
     fetch("/data/predictions.json")
       .then((res) => (res.ok ? res.json() : fallbackData))
       .then((payload) => {
         setData(payload);
+        setGalleryPage(0);
         const typedPayload = payload as AppData;
         if (typedPayload.samples?.length) setSelectedId(typedPayload.samples[0].id);
       })
       .catch(() => setData(fallbackData));
   }, []);
 
-  const selected = useMemo(
-    () => data.samples.find((sample) => sample.id === selectedId) ?? data.samples[0],
-    [data.samples, selectedId]
+  const displayCount = data.gallery?.display_count ?? DEFAULT_DISPLAY_COUNT;
+  const displayedSamples = useMemo(
+    () => pickGalleryPage(data.samples, data.model.classes, displayCount, galleryPage),
+    [data.samples, data.model.classes, displayCount, galleryPage]
   );
+
+  const selected = useMemo(
+    () => displayedSamples.find((sample) => sample.id === selectedId) ?? displayedSamples[0],
+    [displayedSamples, selectedId]
+  );
+
+  useEffect(() => {
+    if (displayedSamples.length) setSelectedId(displayedSamples[0].id);
+  }, [displayedSamples]);
 
   return (
     <main className="shell">
@@ -83,25 +120,39 @@ function App() {
           <div className="metric">
             <ImageIcon size={18} />
             <span>Samples</span>
-            <strong>{data.samples.length}</strong>
+            <strong>{displayedSamples.length}/{data.samples.length}</strong>
           </div>
         </div>
       </section>
 
       <section className="workspace">
-        <aside className="gallery" aria-label="Curated gallery">
-          {data.samples.map((sample) => (
+        <aside className="galleryPanel" aria-label="Curated gallery">
+          <div className="galleryHead">
+            <span>{data.samples.length} photos</span>
             <button
-              className={`thumb ${sample.id === selected?.id ? "active" : ""}`}
-              key={sample.id}
-              onClick={() => setSelectedId(sample.id)}
+              className="refreshButton"
               type="button"
-              title={`${sample.true_class} predicted as ${sample.top_prediction}`}
+              onClick={() => setGalleryPage((page) => page + 1)}
+              disabled={data.samples.length <= displayedSamples.length}
             >
-              <img src={sample.image} alt={`${sample.true_class} car`} />
-              <span>{sample.true_class}</span>
+              <RefreshCw size={16} />
+              Refresh
             </button>
-          ))}
+          </div>
+          <div className="gallery">
+            {displayedSamples.map((sample) => (
+              <button
+                className={`thumb ${sample.id === selected?.id ? "active" : ""}`}
+                key={sample.id}
+                onClick={() => setSelectedId(sample.id)}
+                type="button"
+                title={`${sample.true_class} predicted as ${sample.top_prediction}`}
+              >
+                <img src={sample.image} alt={`${sample.true_class} car`} />
+                <span>{sample.true_class}</span>
+              </button>
+            ))}
+          </div>
         </aside>
 
         <section className="detail" aria-live="polite">

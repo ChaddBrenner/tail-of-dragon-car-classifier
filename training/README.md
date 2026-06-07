@@ -30,3 +30,8 @@ Final:
 .\.venv\Scripts\python.exe training\train.py --data-dir ..\train_validation --mode final --output-dir runs\final --final-model convnext_tiny --final-img-size 288 --final-epochs 10 --batch-size 40 --num-workers 4
 ```
 
+Static gallery:
+
+```powershell
+.\.venv\Scripts\python.exe training\build_gallery.py --data-dir ..\train_validation --checkpoint runs\final_convnext_tiny\final_00_convnext_tiny_288\best.pt --samples-per-class 24 --display-count 48
+```

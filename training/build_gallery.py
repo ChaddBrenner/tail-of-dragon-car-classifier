@@ -20,6 +20,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument("--web-public-dir", type=Path, default=Path("web/public"))
     parser.add_argument("--samples-per-class", type=int, default=3)
+    parser.add_argument("--display-count", type=int, default=48)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--reports-dir", type=Path, default=Path("reports"))
     return parser.parse_args()
@@ -101,6 +102,11 @@ def main() -> None:
             "classes": class_names,
             "metrics": metrics,
             "best_epoch": checkpoint.get("best_epoch"),
+        },
+        "gallery": {
+            "display_count": min(args.display_count, len(samples)),
+            "pool_size": len(samples),
+            "samples_per_class": args.samples_per_class,
         },
         "samples": samples,
     }

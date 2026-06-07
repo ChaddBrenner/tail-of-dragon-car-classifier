@@ -93,12 +93,50 @@ h1 {
   min-height: calc(100vh - 185px);
 }
 
+.galleryPanel {
+  min-width: 0;
+}
+
+.galleryHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.refreshButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 7px 10px;
+  color: var(--ink);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.refreshButton:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.refreshButton:disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
 .gallery {
   display: grid;
   align-content: start;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
-  max-height: calc(100vh - 170px);
+  max-height: calc(100vh - 212px);
   overflow: auto;
   padding-right: 3px;
 }
@@ -281,6 +319,10 @@ footer a {
     order: -1;
   }
 
+  .galleryPanel {
+    max-width: 100%;
+  }
+
   .gallery {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     max-height: none;
@@ -304,6 +346,14 @@ footer a {
 
   .gallery {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .galleryHead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    padding: 8px 0;
+    background: var(--bg);
   }
 
   .resultPane {
