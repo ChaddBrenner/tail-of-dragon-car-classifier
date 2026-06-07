@@ -9,6 +9,23 @@ photos, refresh through a larger static photo pool, and see the model's full
 ranked probability weights. There is no upload endpoint, no public inference
 API, no database, and no user accounts.
 
+## Portfolio Features
+
+- Refreshable validation gallery with full ranked class probabilities.
+- Interactive error analysis across high-confidence misses, low-margin misses,
+  random misses, low-confidence correct examples, and random correct examples.
+- Clickable top-confusion matrix with the images behind each confusion pair.
+- Grad-CAM explainability review for representative correct and incorrect
+  validation samples.
+- Technical case-study page covering the baseline, search space, final metrics,
+  and practical stopping rule.
+- Dataset quality dashboard summarizing final misses, confidence buckets, and
+  class-level error concentration.
+- Curated-only browser inference demo using ONNX Runtime Web. It runs the
+  exported model locally on gallery photos only and does not accept uploads.
+- Model card and supply-chain pages covering use boundaries, limitations, GHCR
+  image metadata, SBOM, and provenance.
+
 ## Results
 
 The inherited checkpoint was a `convnext_tiny` model at 77.09% validation
@@ -33,9 +50,9 @@ See `reports/NOISE_REVIEW.md` for the stopping rule.
   checkpointing, metric exports, and reproducible manifests.
 - Compared ConvNeXt, EfficientNetV2, Swin, CoAtNet, MaxViT, and ViT/AugReg
   candidates on a controlled search pass.
-- Exported the champion to ONNX and verified PyTorch/ONNX parity. The ONNX
-  weights are over GitHub's normal file-size limit, so model binaries are
-  reproducible local artifacts and are excluded from git.
+- Exported the champion to ONNX and verified PyTorch/ONNX parity. The deployable
+  browser-demo ONNX assets are tracked under `web/public/model/` with Git LFS;
+  raw checkpoints and local experiment exports remain excluded from git.
 - Built a static React/TypeScript gallery served by Caddy in Docker.
 
 ## Repo Layout
@@ -49,8 +66,9 @@ reports/               Final metrics and model documentation
 docker_deploy.yml      Self-host compose file
 ```
 
-The raw dataset, checkpoints, ONNX weights, local tools, `.venv`, and training
-runs are intentionally excluded from git.
+The raw dataset, checkpoints, local tools, `.venv`, and training runs are
+intentionally excluded from git. The public ONNX model files needed for the
+curated browser demo are versioned through Git LFS.
 
 ## Local Training
 
@@ -95,10 +113,15 @@ Generate reports from saved predictions:
 ```powershell
 .\.venv\Scripts\python.exe training\export_model.py --checkpoint runs\final_convnext_tiny\final_00_convnext_tiny_288\best.pt
 .\.venv\Scripts\python.exe training\build_gallery.py --data-dir ..\train_validation --checkpoint runs\final_convnext_tiny\final_00_convnext_tiny_288\best.pt --samples-per-class 24 --display-count 48
+.\.venv\Scripts\python.exe training\build_portfolio_assets.py --checkpoint runs\final_convnext_tiny\final_00_convnext_tiny_288\best.pt --predictions runs\final_convnext_tiny\final_00_convnext_tiny_288\best_val_predictions.json
 cd web
 npm ci
 npm run build
 ```
+
+If you clone the repo, run `git lfs install` before checkout or `git lfs pull`
+after checkout so `web/public/model/champion.onnx.data` is the real model
+sidecar file rather than an LFS pointer.
 
 ## Docker Deploy
 

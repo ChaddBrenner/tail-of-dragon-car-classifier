@@ -45,11 +45,21 @@ CutMix, RandAugment, random erasing, crop-scale tuning, and horizontal-flip TTA.
 ## Export
 
 - PyTorch checkpoint: local-only, ignored by git
-- ONNX export: local-only, ignored by git because the external weight file is
+- ONNX export: local deploy artifact, with the curated browser-demo copy tracked
+  under `web/public/model/` using Git LFS because the external weight file is
   about `111 MB`
 - PyTorch/ONNX max absolute logit difference on parity input: `3.34e-06`
 - Dynamic ONNX quantization was not kept because ONNX Runtime shape inference
   failed for this ConvNeXt graph.
+
+## Portfolio App Additions
+
+- Refreshable static validation gallery with full ranked probabilities
+- Interactive error review groups and clickable top-confusion examples
+- Grad-CAM overlays for representative correct and incorrect validation samples
+- Dataset quality dashboard and technical case-study view
+- Curated-only ONNX Runtime Web inference on gallery photos
+- Model-card and supply-chain views with GHCR provenance/SBOM workflow support
 
 ## Stopping Decision
 
