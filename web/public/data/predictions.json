@@ -1,0 +1,2091 @@
+{
+  "model": {
+    "name": "convnext_tiny",
+    "version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+    "classes": [
+      "bmw",
+      "corvette",
+      "honda",
+      "jeep",
+      "miata",
+      "mustang",
+      "porsche",
+      "vw"
+    ],
+    "metrics": {
+      "val_loss": 0.10652255786270574,
+      "accuracy": 0.9912427022518766,
+      "macro_f1": 0.9912341247865801,
+      "balanced_accuracy": 0.991238154960981,
+      "top3_accuracy": 0.9977481234361968,
+      "evaluated_samples": 23980
+    },
+    "best_epoch": 10
+  },
+  "samples": [
+    {
+      "id": "001_bmw_6B790E56EB6064198125",
+      "image": "/gallery/001_bmw_6B790E56EB6064198125.jpg",
+      "true_class": "bmw",
+      "top_prediction": "bmw",
+      "top_probability": 0.9281965494155884,
+      "probabilities": [
+        {
+          "class_name": "bmw",
+          "probability": 0.9281965494155884
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.011115744709968567
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.01107168011367321
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.01103023998439312
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.010921511799097061
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.009735318832099438
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.00928768515586853
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.008641254156827927
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "002_bmw_6B790E56EB6064198125",
+      "image": "/gallery/002_bmw_6B790E56EB6064198125.jpg",
+      "true_class": "bmw",
+      "top_prediction": "bmw",
+      "top_probability": 0.924869179725647,
+      "probabilities": [
+        {
+          "class_name": "bmw",
+          "probability": 0.924869179725647
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.011799365282058716
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.011370564810931683
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.011291657574474812
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.011146065779030323
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.010234634391963482
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.009691819548606873
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.009596781805157661
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "003_bmw_6B790E56EB6064198125",
+      "image": "/gallery/003_bmw_6B790E56EB6064198125.jpg",
+      "true_class": "bmw",
+      "top_prediction": "bmw",
+      "top_probability": 0.9208062887191772,
+      "probabilities": [
+        {
+          "class_name": "bmw",
+          "probability": 0.9208062887191772
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.012705405242741108
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.012331965379416943
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.011943429708480835
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.01163564808666706
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.010921020060777664
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010399878956377506
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.009256350807845592
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "004_bmw_6B790E56EB6064198125",
+      "image": "/gallery/004_bmw_6B790E56EB6064198125.jpg",
+      "true_class": "bmw",
+      "top_prediction": "bmw",
+      "top_probability": 0.9264760613441467,
+      "probabilities": [
+        {
+          "class_name": "bmw",
+          "probability": 0.9264760613441467
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.012067202478647232
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.011372540146112442
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.011168375611305237
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.01115886215120554
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.009517957456409931
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.009169205091893673
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.009069755673408508
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "005_bmw_6B790E56EB6064198125",
+      "image": "/gallery/005_bmw_6B790E56EB6064198125.jpg",
+      "true_class": "bmw",
+      "top_prediction": "bmw",
+      "top_probability": 0.925518274307251,
+      "probabilities": [
+        {
+          "class_name": "bmw",
+          "probability": 0.925518274307251
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.012193705886602402
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.011167171411216259
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.010790648870170116
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.010533483698964119
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010464098304510117
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.010346878319978714
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.00898574385792017
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "006_bmw_6B790E56EB6064198125",
+      "image": "/gallery/006_bmw_6B790E56EB6064198125.jpg",
+      "true_class": "bmw",
+      "top_prediction": "bmw",
+      "top_probability": 0.9300137758255005,
+      "probabilities": [
+        {
+          "class_name": "bmw",
+          "probability": 0.9300137758255005
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.01099450048059225
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.010854499414563179
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.010789789259433746
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.010781503282487392
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.008934042416512966
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.008873237296938896
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.00875870231539011
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "007_corvette_6B790E56EB6064198125",
+      "image": "/gallery/007_corvette_6B790E56EB6064198125.jpg",
+      "true_class": "corvette",
+      "top_prediction": "corvette",
+      "top_probability": 0.929465651512146,
+      "probabilities": [
+        {
+          "class_name": "corvette",
+          "probability": 0.929465651512146
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.01154466811567545
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.010893184691667557
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.009947552345693111
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.009748099371790886
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.009698698297142982
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.009623786434531212
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.009078418835997581
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "008_corvette_6B790E56EB6064198125",
+      "image": "/gallery/008_corvette_6B790E56EB6064198125.jpg",
+      "true_class": "corvette",
+      "top_prediction": "corvette",
+      "top_probability": 0.9344083666801453,
+      "probabilities": [
+        {
+          "class_name": "corvette",
+          "probability": 0.9344083666801453
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.010978314094245434
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.010249474085867405
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.00928284227848053
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.008962726220488548
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.008917564526200294
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.0086996890604496
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.00850106030702591
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "009_corvette_6B790E56EB6064198125",
+      "image": "/gallery/009_corvette_6B790E56EB6064198125.jpg",
+      "true_class": "corvette",
+      "top_prediction": "corvette",
+      "top_probability": 0.9291820526123047,
+      "probabilities": [
+        {
+          "class_name": "corvette",
+          "probability": 0.9291820526123047
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.012203563004732132
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.010647532530128956
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.00980481505393982
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.009719123132526875
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.009671906940639019
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.009627017192542553
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.009143969044089317
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "010_corvette_6B790E56EB6064198125",
+      "image": "/gallery/010_corvette_6B790E56EB6064198125.jpg",
+      "true_class": "corvette",
+      "top_prediction": "corvette",
+      "top_probability": 0.9198581576347351,
+      "probabilities": [
+        {
+          "class_name": "corvette",
+          "probability": 0.9198581576347351
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.0137989716604352
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.01267080195248127
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.011256791651248932
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.01107400469481945
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.010745609179139137
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.010476176626980305
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.010119529440999031
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "011_corvette_6B790E56EB6064198125",
+      "image": "/gallery/011_corvette_6B790E56EB6064198125.jpg",
+      "true_class": "corvette",
+      "top_prediction": "corvette",
+      "top_probability": 0.9262616634368896,
+      "probabilities": [
+        {
+          "class_name": "corvette",
+          "probability": 0.9262616634368896
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.012829429470002651
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.01116748433560133
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.010435415431857109
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.010256669484078884
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.010112595744431019
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.00982801802456379
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.009108773432672024
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "012_corvette_6B790E56EB6064198125",
+      "image": "/gallery/012_corvette_6B790E56EB6064198125.jpg",
+      "true_class": "corvette",
+      "top_prediction": "corvette",
+      "top_probability": 0.93733811378479,
+      "probabilities": [
+        {
+          "class_name": "corvette",
+          "probability": 0.93733811378479
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.010308069176971912
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.009437424130737782
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.008876082487404346
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.008705421350896358
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.008581435307860374
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.008537515066564083
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.008215946145355701
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "013_honda_6B790E56EB6064198125",
+      "image": "/gallery/013_honda_6B790E56EB6064198125.jpg",
+      "true_class": "honda",
+      "top_prediction": "honda",
+      "top_probability": 0.9159374833106995,
+      "probabilities": [
+        {
+          "class_name": "honda",
+          "probability": 0.9159374833106995
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.0139808040112257
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.012946627102792263
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.01191005576401949
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.011867843568325043
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.01132139004766941
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.011077284812927246
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010958452709019184
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "014_honda_6B790E56EB6064198125",
+      "image": "/gallery/014_honda_6B790E56EB6064198125.jpg",
+      "true_class": "honda",
+      "top_prediction": "honda",
+      "top_probability": 0.924851655960083,
+      "probabilities": [
+        {
+          "class_name": "honda",
+          "probability": 0.924851655960083
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.011963574215769768
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.011238313280045986
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.011139972135424614
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.01092917937785387
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.010687537491321564
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.009952227585017681
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.009237519465386868
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "015_honda_6B790E56EB6064198125",
+      "image": "/gallery/015_honda_6B790E56EB6064198125.jpg",
+      "true_class": "honda",
+      "top_prediction": "honda",
+      "top_probability": 0.9144423604011536,
+      "probabilities": [
+        {
+          "class_name": "honda",
+          "probability": 0.9144423604011536
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.023541167378425598
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.011292518116533756
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.010904638096690178
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.010240565054118633
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.010165374726057053
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.009918531402945518
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.009494912810623646
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "016_honda_6B790E56EB6064198125",
+      "image": "/gallery/016_honda_6B790E56EB6064198125.jpg",
+      "true_class": "honda",
+      "top_prediction": "honda",
+      "top_probability": 0.9183476567268372,
+      "probabilities": [
+        {
+          "class_name": "honda",
+          "probability": 0.9183476567268372
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.013464911840856075
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.012483697384595871
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.01205072458833456
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.011495746672153473
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.01128191128373146
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010515294969081879
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.010360018350183964
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "017_honda_6B790E56EB6064198125",
+      "image": "/gallery/017_honda_6B790E56EB6064198125.jpg",
+      "true_class": "honda",
+      "top_prediction": "honda",
+      "top_probability": 0.9297608137130737,
+      "probabilities": [
+        {
+          "class_name": "honda",
+          "probability": 0.9297608137130737
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.01141750905662775
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.011015845462679863
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.010168025270104408
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.010156826116144657
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.009806567803025246
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.009269126690924168
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.00840521790087223
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "018_honda_6B790E56EB6064198125",
+      "image": "/gallery/018_honda_6B790E56EB6064198125.jpg",
+      "true_class": "honda",
+      "top_prediction": "honda",
+      "top_probability": 0.9218248724937439,
+      "probabilities": [
+        {
+          "class_name": "honda",
+          "probability": 0.9218248724937439
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.013264646753668785
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.011896556243300438
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.011193669401109219
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010958989150822163
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.01068869512528181
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.010118835605680943
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.010053660720586777
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "019_jeep_6B790E56EB6064198125",
+      "image": "/gallery/019_jeep_6B790E56EB6064198125.jpg",
+      "true_class": "jeep",
+      "top_prediction": "jeep",
+      "top_probability": 0.9280332922935486,
+      "probabilities": [
+        {
+          "class_name": "jeep",
+          "probability": 0.9280332922935486
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.011515816673636436
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.010738944634795189
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.010579896159470081
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.009946520440280437
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.009778227657079697
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.009723673574626446
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.00968367699533701
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "020_jeep_6B790E56EB6064198125",
+      "image": "/gallery/020_jeep_6B790E56EB6064198125.jpg",
+      "true_class": "jeep",
+      "top_prediction": "jeep",
+      "top_probability": 0.924221932888031,
+      "probabilities": [
+        {
+          "class_name": "jeep",
+          "probability": 0.924221932888031
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.01240811962634325
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.0116954380646348
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.010687891393899918
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010685333050787449
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.010352852754294872
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.010212789289653301
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.009735534898936749
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "021_jeep_6B790E56EB6064198125",
+      "image": "/gallery/021_jeep_6B790E56EB6064198125.jpg",
+      "true_class": "jeep",
+      "top_prediction": "jeep",
+      "top_probability": 0.92889803647995,
+      "probabilities": [
+        {
+          "class_name": "jeep",
+          "probability": 0.92889803647995
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.011383495293557644
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.010772975161671638
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.010261446237564087
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.010029482655227184
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.009712488390505314
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.00958311278373003
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.009358986280858517
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "022_jeep_6B790E56EB6064198125",
+      "image": "/gallery/022_jeep_6B790E56EB6064198125.jpg",
+      "true_class": "jeep",
+      "top_prediction": "jeep",
+      "top_probability": 0.9309106469154358,
+      "probabilities": [
+        {
+          "class_name": "jeep",
+          "probability": 0.9309106469154358
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.011362545192241669
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.010240549221634865
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.010124312713742256
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.009887665510177612
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.009290109388530254
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.009234239347279072
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.008949901908636093
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "023_jeep_6B790E56EB6064198125",
+      "image": "/gallery/023_jeep_6B790E56EB6064198125.jpg",
+      "true_class": "jeep",
+      "top_prediction": "jeep",
+      "top_probability": 0.8767229318618774,
+      "probabilities": [
+        {
+          "class_name": "jeep",
+          "probability": 0.8767229318618774
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.020616626366972923
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.01934283971786499
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.01854712702333927
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.018150275573134422
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.017477678135037422
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.015405465848743916
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.0137370890006423
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "024_jeep_6B790E56EB6064198125",
+      "image": "/gallery/024_jeep_6B790E56EB6064198125.jpg",
+      "true_class": "jeep",
+      "top_prediction": "jeep",
+      "top_probability": 0.9284690022468567,
+      "probabilities": [
+        {
+          "class_name": "jeep",
+          "probability": 0.9284690022468567
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.011850878596305847
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.011240433901548386
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.010134108364582062
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.009967388585209846
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.00993659533560276
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.009646045975387096
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.008755574002861977
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "025_miata_6B790E56EB6064198125",
+      "image": "/gallery/025_miata_6B790E56EB6064198125.jpg",
+      "true_class": "miata",
+      "top_prediction": "miata",
+      "top_probability": 0.9218259453773499,
+      "probabilities": [
+        {
+          "class_name": "miata",
+          "probability": 0.9218259453773499
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.011564497835934162
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.011556086130440235
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.011494550853967667
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.011129342019557953
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.010972818359732628
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.010941896587610245
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010514849796891212
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "026_miata_6B790E56EB6064198125",
+      "image": "/gallery/026_miata_6B790E56EB6064198125.jpg",
+      "true_class": "miata",
+      "top_prediction": "miata",
+      "top_probability": 0.9131737947463989,
+      "probabilities": [
+        {
+          "class_name": "miata",
+          "probability": 0.9131737947463989
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.01312806736677885
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.013001170940697193
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.012895849533379078
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.01232064701616764
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.012004907242953777
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.011786614544689655
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.011689036153256893
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "027_miata_6B790E56EB6064198125",
+      "image": "/gallery/027_miata_6B790E56EB6064198125.jpg",
+      "true_class": "miata",
+      "top_prediction": "miata",
+      "top_probability": 0.917523205280304,
+      "probabilities": [
+        {
+          "class_name": "miata",
+          "probability": 0.917523205280304
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.012382104061543941
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.012229068204760551
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.012198708020150661
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.01194041222333908
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.011568245477974415
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.011476874351501465
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010681443847715855
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "028_miata_6B790E56EB6064198125",
+      "image": "/gallery/028_miata_6B790E56EB6064198125.jpg",
+      "true_class": "miata",
+      "top_prediction": "miata",
+      "top_probability": 0.9160485863685608,
+      "probabilities": [
+        {
+          "class_name": "miata",
+          "probability": 0.9160485863685608
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.013060254044830799
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.012416395358741283
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.012049168348312378
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.011850361712276936
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.011844972148537636
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.011657851748168468
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.011072371155023575
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "029_miata_6B790E56EB6064198125",
+      "image": "/gallery/029_miata_6B790E56EB6064198125.jpg",
+      "true_class": "miata",
+      "top_prediction": "miata",
+      "top_probability": 0.9097422957420349,
+      "probabilities": [
+        {
+          "class_name": "miata",
+          "probability": 0.9097422957420349
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.018470460548996925
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.014237488619983196
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.012377137318253517
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.011663232930004597
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.011535621248185635
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.011171079240739346
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010802745819091797
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "030_miata_6B790E56EB6064198125",
+      "image": "/gallery/030_miata_6B790E56EB6064198125.jpg",
+      "true_class": "miata",
+      "top_prediction": "miata",
+      "top_probability": 0.9150286316871643,
+      "probabilities": [
+        {
+          "class_name": "miata",
+          "probability": 0.9150286316871643
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.013030466623604298
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.012835356406867504
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.012295395135879517
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.012252829037606716
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.01182300690561533
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.011416650377213955
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.011317698284983635
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "031_mustang_6B790E56EB6064198125",
+      "image": "/gallery/031_mustang_6B790E56EB6064198125.jpg",
+      "true_class": "mustang",
+      "top_prediction": "mustang",
+      "top_probability": 0.9262536764144897,
+      "probabilities": [
+        {
+          "class_name": "mustang",
+          "probability": 0.9262536764144897
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.011348387226462364
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.010961296036839485
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.010927865281701088
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.010730036534368992
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.010172531940042973
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.009830971248447895
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.009775256738066673
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "032_mustang_6B790E56EB6064198125",
+      "image": "/gallery/032_mustang_6B790E56EB6064198125.jpg",
+      "true_class": "mustang",
+      "top_prediction": "mustang",
+      "top_probability": 0.9240948557853699,
+      "probabilities": [
+        {
+          "class_name": "mustang",
+          "probability": 0.9240948557853699
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.012018895708024502
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.011402574367821217
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.01091846078634262
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.010874612256884575
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.010767207480967045
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.010300212539732456
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.009623156860470772
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "033_mustang_6B790E56EB6064198125",
+      "image": "/gallery/033_mustang_6B790E56EB6064198125.jpg",
+      "true_class": "mustang",
+      "top_prediction": "mustang",
+      "top_probability": 0.9158654808998108,
+      "probabilities": [
+        {
+          "class_name": "mustang",
+          "probability": 0.9158654808998108
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.013297447934746742
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.012833766639232635
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.01196374837309122
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.011791861616075039
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.011766009032726288
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.011400205083191395
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.01108153909444809
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "034_mustang_6B790E56EB6064198125",
+      "image": "/gallery/034_mustang_6B790E56EB6064198125.jpg",
+      "true_class": "mustang",
+      "top_prediction": "mustang",
+      "top_probability": 0.9197778105735779,
+      "probabilities": [
+        {
+          "class_name": "mustang",
+          "probability": 0.9197778105735779
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.012407955713570118
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.0121112996712327
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.01165972650051117
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.011411156505346298
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.011334395036101341
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.010775876231491566
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.01052186731249094
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "035_mustang_6B790E56EB6064198125",
+      "image": "/gallery/035_mustang_6B790E56EB6064198125.jpg",
+      "true_class": "mustang",
+      "top_prediction": "mustang",
+      "top_probability": 0.9298957586288452,
+      "probabilities": [
+        {
+          "class_name": "mustang",
+          "probability": 0.9298957586288452
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.010667572729289532
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.010557055473327637
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.010312313213944435
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.010252965614199638
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.010185020044445992
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.009170028381049633
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.008959322236478329
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "036_mustang_6B790E56EB6064198125",
+      "image": "/gallery/036_mustang_6B790E56EB6064198125.jpg",
+      "true_class": "mustang",
+      "top_prediction": "mustang",
+      "top_probability": 0.928230881690979,
+      "probabilities": [
+        {
+          "class_name": "mustang",
+          "probability": 0.928230881690979
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.010674970224499702
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.010426088236272335
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.010411844588816166
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.010400621220469475
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.010202227160334587
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010191762819886208
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.009461581707000732
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "037_porsche_6B790E56EB6064198125",
+      "image": "/gallery/037_porsche_6B790E56EB6064198125.jpg",
+      "true_class": "porsche",
+      "top_prediction": "porsche",
+      "top_probability": 0.9429206848144531,
+      "probabilities": [
+        {
+          "class_name": "porsche",
+          "probability": 0.9429206848144531
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.009096675552427769
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.008929151110351086
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.008703146129846573
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.008077027276158333
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.007780163548886776
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.007493313867598772
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.006999863777309656
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "038_porsche_6B790E56EB6064198125",
+      "image": "/gallery/038_porsche_6B790E56EB6064198125.jpg",
+      "true_class": "porsche",
+      "top_prediction": "porsche",
+      "top_probability": 0.9262159466743469,
+      "probabilities": [
+        {
+          "class_name": "porsche",
+          "probability": 0.9262159466743469
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.011523975059390068
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.01148618757724762
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.011009649373590946
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.010473798029124737
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010117701254785061
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.009823087602853775
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.009349735453724861
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "039_porsche_6B790E56EB6064198125",
+      "image": "/gallery/039_porsche_6B790E56EB6064198125.jpg",
+      "true_class": "porsche",
+      "top_prediction": "porsche",
+      "top_probability": 0.9583913683891296,
+      "probabilities": [
+        {
+          "class_name": "porsche",
+          "probability": 0.9583913683891296
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.006999083794653416
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.006522970739752054
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.006519217509776354
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.005583206191658974
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.005416078492999077
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.005286751314997673
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.00528135197237134
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "040_porsche_6B790E56EB6064198125",
+      "image": "/gallery/040_porsche_6B790E56EB6064198125.jpg",
+      "true_class": "porsche",
+      "top_prediction": "porsche",
+      "top_probability": 0.9465669393539429,
+      "probabilities": [
+        {
+          "class_name": "porsche",
+          "probability": 0.9465669393539429
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.009311099536716938
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.008274473249912262
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.007978144101798534
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.007410748861730099
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.0069297137670218945
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.006861637346446514
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.006667227949947119
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "041_porsche_6B790E56EB6064198125",
+      "image": "/gallery/041_porsche_6B790E56EB6064198125.jpg",
+      "true_class": "porsche",
+      "top_prediction": "porsche",
+      "top_probability": 0.9241411089897156,
+      "probabilities": [
+        {
+          "class_name": "porsche",
+          "probability": 0.9241411089897156
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.01183458510786295
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.01151715125888586
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.011372757144272327
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.01127066370099783
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010414663702249527
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.009850563481450081
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.009598592296242714
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "042_porsche_6B790E56EB6064198125",
+      "image": "/gallery/042_porsche_6B790E56EB6064198125.jpg",
+      "true_class": "porsche",
+      "top_prediction": "porsche",
+      "top_probability": 0.9176084995269775,
+      "probabilities": [
+        {
+          "class_name": "porsche",
+          "probability": 0.9176084995269775
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.013243239372968674
+        },
+        {
+          "class_name": "vw",
+          "probability": 0.012741213664412498
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.012357326224446297
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.012201739475131035
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.010909649543464184
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010754276067018509
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.010184066370129585
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "043_vw_6B790E56EB6064198125",
+      "image": "/gallery/043_vw_6B790E56EB6064198125.jpg",
+      "true_class": "vw",
+      "top_prediction": "vw",
+      "top_probability": 0.9413852691650391,
+      "probabilities": [
+        {
+          "class_name": "vw",
+          "probability": 0.9413852691650391
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.00937452632933855
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.0092135826125741
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.008639904670417309
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.008431234396994114
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.00804577674716711
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.007490393240004778
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.007419306319206953
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "044_vw_6B790E56EB6064198125",
+      "image": "/gallery/044_vw_6B790E56EB6064198125.jpg",
+      "true_class": "vw",
+      "top_prediction": "vw",
+      "top_probability": 0.9478840827941895,
+      "probabilities": [
+        {
+          "class_name": "vw",
+          "probability": 0.9478840827941895
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.008255968801677227
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.008183049969375134
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.007739193271845579
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.007729674223810434
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.007004177663475275
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.006716582458466291
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.006487218197435141
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "045_vw_6B790E56EB6064198125",
+      "image": "/gallery/045_vw_6B790E56EB6064198125.jpg",
+      "true_class": "vw",
+      "top_prediction": "vw",
+      "top_probability": 0.9398031830787659,
+      "probabilities": [
+        {
+          "class_name": "vw",
+          "probability": 0.9398031830787659
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.00970417819917202
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.009154456667602062
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.009042602963745594
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.008399398997426033
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.008242056705057621
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.008155644871294498
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.007498389575630426
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "046_vw_6B790E56EB6064198125",
+      "image": "/gallery/046_vw_6B790E56EB6064198125.jpg",
+      "true_class": "vw",
+      "top_prediction": "vw",
+      "top_probability": 0.928623378276825,
+      "probabilities": [
+        {
+          "class_name": "vw",
+          "probability": 0.928623378276825
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.01168521773070097
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.011221025139093399
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.010960469022393227
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.00963834673166275
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.009506563656032085
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.009391168132424355
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.008973823860287666
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "047_vw_6B790E56EB6064198125",
+      "image": "/gallery/047_vw_6B790E56EB6064198125.jpg",
+      "true_class": "vw",
+      "top_prediction": "vw",
+      "top_probability": 0.9342293739318848,
+      "probabilities": [
+        {
+          "class_name": "vw",
+          "probability": 0.9342293739318848
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.010223072953522205
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.010106795467436314
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.009923133999109268
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.009784212335944176
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.00946839526295662
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.008322312496602535
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.007942736148834229
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    },
+    {
+      "id": "048_vw_6B790E56EB6064198125",
+      "image": "/gallery/048_vw_6B790E56EB6064198125.jpg",
+      "true_class": "vw",
+      "top_prediction": "vw",
+      "top_probability": 0.9296489953994751,
+      "probabilities": [
+        {
+          "class_name": "vw",
+          "probability": 0.9296489953994751
+        },
+        {
+          "class_name": "porsche",
+          "probability": 0.014391045086085796
+        },
+        {
+          "class_name": "corvette",
+          "probability": 0.010408313944935799
+        },
+        {
+          "class_name": "mustang",
+          "probability": 0.010394560173153877
+        },
+        {
+          "class_name": "honda",
+          "probability": 0.009407415054738522
+        },
+        {
+          "class_name": "jeep",
+          "probability": 0.00935653131455183
+        },
+        {
+          "class_name": "miata",
+          "probability": 0.00861275102943182
+        },
+        {
+          "class_name": "bmw",
+          "probability": 0.0077803111635148525
+        }
+      ],
+      "model_version": "convnext_tiny-epoch10-2026-06-07T10:04:29Z",
+      "inference_timestamp": "2026-06-07T10:04:29Z"
+    }
+  ]
+}

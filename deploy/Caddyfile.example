@@ -1,0 +1,6 @@
+# Add this to your existing host Caddy instance and point it at the app container.
+#
+# car-classifier.example.com {
+#   reverse_proxy 127.0.0.1:8080
+# }
+

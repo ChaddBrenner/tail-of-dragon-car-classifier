@@ -1,0 +1,12 @@
+:80 {
+	root * /srv
+	encode gzip zstd
+	file_server
+	try_files {path} /index.html
+
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+	}
+}
+

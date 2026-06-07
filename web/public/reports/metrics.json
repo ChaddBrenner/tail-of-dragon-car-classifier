@@ -1,0 +1,29 @@
+{
+  "name": "final_convnext_tiny_288",
+  "accuracy": 0.9912427022518766,
+  "macro_f1": 0.9912341247865801,
+  "balanced_accuracy": 0.991238154960981,
+  "top3_accuracy": 0.9977481234361968,
+  "evaluated_samples": 23980,
+  "error_count": 210,
+  "class_names": [
+    "bmw",
+    "corvette",
+    "honda",
+    "jeep",
+    "miata",
+    "mustang",
+    "porsche",
+    "vw"
+  ],
+  "errors_by_class": {
+    "bmw": 52,
+    "corvette": 29,
+    "honda": 65,
+    "jeep": 6,
+    "miata": 10,
+    "mustang": 17,
+    "porsche": 11,
+    "vw": 20
+  }
+}

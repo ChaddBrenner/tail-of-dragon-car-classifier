@@ -1,0 +1,248 @@
+[
+  {
+    "true_class": "honda",
+    "pred_class": "vw",
+    "count": 25,
+    "pct_of_true": 0.008361204013377926
+  },
+  {
+    "true_class": "bmw",
+    "pred_class": "vw",
+    "count": 15,
+    "pct_of_true": 0.005
+  },
+  {
+    "true_class": "bmw",
+    "pred_class": "corvette",
+    "count": 11,
+    "pct_of_true": 0.0036666666666666666
+  },
+  {
+    "true_class": "corvette",
+    "pred_class": "mustang",
+    "count": 11,
+    "pct_of_true": 0.0036666666666666666
+  },
+  {
+    "true_class": "honda",
+    "pred_class": "bmw",
+    "count": 11,
+    "pct_of_true": 0.0036789297658862876
+  },
+  {
+    "true_class": "corvette",
+    "pred_class": "miata",
+    "count": 10,
+    "pct_of_true": 0.0033333333333333335
+  },
+  {
+    "true_class": "bmw",
+    "pred_class": "mustang",
+    "count": 8,
+    "pct_of_true": 0.0026666666666666666
+  },
+  {
+    "true_class": "honda",
+    "pred_class": "corvette",
+    "count": 8,
+    "pct_of_true": 0.0026755852842809363
+  },
+  {
+    "true_class": "vw",
+    "pred_class": "mustang",
+    "count": 8,
+    "pct_of_true": 0.0026755852842809363
+  },
+  {
+    "true_class": "bmw",
+    "pred_class": "miata",
+    "count": 7,
+    "pct_of_true": 0.0023333333333333335
+  },
+  {
+    "true_class": "honda",
+    "pred_class": "miata",
+    "count": 7,
+    "pct_of_true": 0.0023411371237458192
+  },
+  {
+    "true_class": "honda",
+    "pred_class": "porsche",
+    "count": 7,
+    "pct_of_true": 0.0023411371237458192
+  },
+  {
+    "true_class": "mustang",
+    "pred_class": "corvette",
+    "count": 7,
+    "pct_of_true": 0.0023333333333333335
+  },
+  {
+    "true_class": "bmw",
+    "pred_class": "porsche",
+    "count": 6,
+    "pct_of_true": 0.002
+  },
+  {
+    "true_class": "porsche",
+    "pred_class": "miata",
+    "count": 6,
+    "pct_of_true": 0.002
+  },
+  {
+    "true_class": "vw",
+    "pred_class": "bmw",
+    "count": 6,
+    "pct_of_true": 0.002006688963210702
+  },
+  {
+    "true_class": "bmw",
+    "pred_class": "honda",
+    "count": 5,
+    "pct_of_true": 0.0016666666666666668
+  },
+  {
+    "true_class": "honda",
+    "pred_class": "mustang",
+    "count": 5,
+    "pct_of_true": 0.0016722408026755853
+  },
+  {
+    "true_class": "mustang",
+    "pred_class": "vw",
+    "count": 5,
+    "pct_of_true": 0.0016666666666666668
+  },
+  {
+    "true_class": "jeep",
+    "pred_class": "vw",
+    "count": 4,
+    "pct_of_true": 0.0013333333333333333
+  },
+  {
+    "true_class": "corvette",
+    "pred_class": "porsche",
+    "count": 3,
+    "pct_of_true": 0.001
+  },
+  {
+    "true_class": "corvette",
+    "pred_class": "vw",
+    "count": 3,
+    "pct_of_true": 0.001
+  },
+  {
+    "true_class": "miata",
+    "pred_class": "honda",
+    "count": 3,
+    "pct_of_true": 0.001
+  },
+  {
+    "true_class": "miata",
+    "pred_class": "porsche",
+    "count": 3,
+    "pct_of_true": 0.001
+  },
+  {
+    "true_class": "mustang",
+    "pred_class": "porsche",
+    "count": 3,
+    "pct_of_true": 0.001
+  },
+  {
+    "true_class": "honda",
+    "pred_class": "jeep",
+    "count": 2,
+    "pct_of_true": 0.0006688963210702341
+  },
+  {
+    "true_class": "miata",
+    "pred_class": "corvette",
+    "count": 2,
+    "pct_of_true": 0.0006666666666666666
+  },
+  {
+    "true_class": "miata",
+    "pred_class": "mustang",
+    "count": 2,
+    "pct_of_true": 0.0006666666666666666
+  },
+  {
+    "true_class": "porsche",
+    "pred_class": "corvette",
+    "count": 2,
+    "pct_of_true": 0.0006666666666666666
+  },
+  {
+    "true_class": "porsche",
+    "pred_class": "vw",
+    "count": 2,
+    "pct_of_true": 0.0006666666666666666
+  },
+  {
+    "true_class": "vw",
+    "pred_class": "honda",
+    "count": 2,
+    "pct_of_true": 0.0006688963210702341
+  },
+  {
+    "true_class": "vw",
+    "pred_class": "porsche",
+    "count": 2,
+    "pct_of_true": 0.0006688963210702341
+  },
+  {
+    "true_class": "corvette",
+    "pred_class": "bmw",
+    "count": 1,
+    "pct_of_true": 0.0003333333333333333
+  },
+  {
+    "true_class": "corvette",
+    "pred_class": "honda",
+    "count": 1,
+    "pct_of_true": 0.0003333333333333333
+  },
+  {
+    "true_class": "jeep",
+    "pred_class": "miata",
+    "count": 1,
+    "pct_of_true": 0.0003333333333333333
+  },
+  {
+    "true_class": "jeep",
+    "pred_class": "porsche",
+    "count": 1,
+    "pct_of_true": 0.0003333333333333333
+  },
+  {
+    "true_class": "mustang",
+    "pred_class": "bmw",
+    "count": 1,
+    "pct_of_true": 0.0003333333333333333
+  },
+  {
+    "true_class": "mustang",
+    "pred_class": "miata",
+    "count": 1,
+    "pct_of_true": 0.0003333333333333333
+  },
+  {
+    "true_class": "porsche",
+    "pred_class": "honda",
+    "count": 1,
+    "pct_of_true": 0.0003333333333333333
+  },
+  {
+    "true_class": "vw",
+    "pred_class": "corvette",
+    "count": 1,
+    "pct_of_true": 0.00033444816053511704
+  },
+  {
+    "true_class": "vw",
+    "pred_class": "miata",
+    "count": 1,
+    "pct_of_true": 0.00033444816053511704
+  }
+]

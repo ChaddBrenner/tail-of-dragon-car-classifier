@@ -1,0 +1,182 @@
+{
+  "total": 23980,
+  "errors": 210,
+  "accuracy": 0.9912427022518766,
+  "sheets": {
+    "errors_high_conf": "reports\\noise_review\\errors_high_conf.jpg",
+    "errors_random": "reports\\noise_review\\errors_random.jpg",
+    "errors_low_margin": "reports\\noise_review\\errors_low_margin.jpg",
+    "correct_low_conf": "reports\\noise_review\\correct_low_conf.jpg",
+    "correct_random": "reports\\noise_review\\correct_random.jpg",
+    "correct_high_conf": "reports\\noise_review\\correct_high_conf.jpg"
+  },
+  "top_error_pairs": [
+    {
+      "true_class": "honda",
+      "pred_class": "vw",
+      "count": 25
+    },
+    {
+      "true_class": "bmw",
+      "pred_class": "vw",
+      "count": 15
+    },
+    {
+      "true_class": "bmw",
+      "pred_class": "corvette",
+      "count": 11
+    },
+    {
+      "true_class": "corvette",
+      "pred_class": "mustang",
+      "count": 11
+    },
+    {
+      "true_class": "honda",
+      "pred_class": "bmw",
+      "count": 11
+    },
+    {
+      "true_class": "corvette",
+      "pred_class": "miata",
+      "count": 10
+    },
+    {
+      "true_class": "bmw",
+      "pred_class": "mustang",
+      "count": 8
+    },
+    {
+      "true_class": "honda",
+      "pred_class": "corvette",
+      "count": 8
+    },
+    {
+      "true_class": "vw",
+      "pred_class": "mustang",
+      "count": 8
+    },
+    {
+      "true_class": "bmw",
+      "pred_class": "miata",
+      "count": 7
+    },
+    {
+      "true_class": "honda",
+      "pred_class": "miata",
+      "count": 7
+    },
+    {
+      "true_class": "honda",
+      "pred_class": "porsche",
+      "count": 7
+    },
+    {
+      "true_class": "mustang",
+      "pred_class": "corvette",
+      "count": 7
+    },
+    {
+      "true_class": "bmw",
+      "pred_class": "porsche",
+      "count": 6
+    },
+    {
+      "true_class": "porsche",
+      "pred_class": "miata",
+      "count": 6
+    },
+    {
+      "true_class": "vw",
+      "pred_class": "bmw",
+      "count": 6
+    },
+    {
+      "true_class": "bmw",
+      "pred_class": "honda",
+      "count": 5
+    },
+    {
+      "true_class": "honda",
+      "pred_class": "mustang",
+      "count": 5
+    },
+    {
+      "true_class": "mustang",
+      "pred_class": "vw",
+      "count": 5
+    },
+    {
+      "true_class": "jeep",
+      "pred_class": "vw",
+      "count": 4
+    },
+    {
+      "true_class": "corvette",
+      "pred_class": "porsche",
+      "count": 3
+    },
+    {
+      "true_class": "corvette",
+      "pred_class": "vw",
+      "count": 3
+    },
+    {
+      "true_class": "miata",
+      "pred_class": "honda",
+      "count": 3
+    },
+    {
+      "true_class": "miata",
+      "pred_class": "porsche",
+      "count": 3
+    },
+    {
+      "true_class": "mustang",
+      "pred_class": "porsche",
+      "count": 3
+    },
+    {
+      "true_class": "honda",
+      "pred_class": "jeep",
+      "count": 2
+    },
+    {
+      "true_class": "miata",
+      "pred_class": "mustang",
+      "count": 2
+    },
+    {
+      "true_class": "miata",
+      "pred_class": "corvette",
+      "count": 2
+    },
+    {
+      "true_class": "porsche",
+      "pred_class": "corvette",
+      "count": 2
+    },
+    {
+      "true_class": "porsche",
+      "pred_class": "vw",
+      "count": 2
+    }
+  ],
+  "errors_by_class": {
+    "bmw": 52,
+    "corvette": 29,
+    "honda": 65,
+    "jeep": 6,
+    "miata": 10,
+    "mustang": 17,
+    "porsche": 11,
+    "vw": 20
+  },
+  "error_confidence_buckets": {
+    "top_prob_ge_0_90": 37,
+    "top_prob_0_75_0_90": 45,
+    "top_prob_0_50_0_75": 66,
+    "top_prob_lt_0_50": 62
+  },
+  "low_conf_correct_count": 90
+}
