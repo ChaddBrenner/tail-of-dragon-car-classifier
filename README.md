@@ -1,133 +1,141 @@
-# Tail of Dragon Car Classifier
+# Tail of the Dragon Car Classifier
 
-Image-classification portfolio project for Tail of the Dragon car photos. The
-model classifies images into eight gallery labels: `bmw`, `corvette`, `honda`,
-`jeep`, `miata`, `mustang`, `porsche`, and `vw`.
+[![Build and publish](https://github.com/ChaddBrenner/tail-of-dragon-car-classifier/actions/workflows/docker.yml/badge.svg)](https://github.com/ChaddBrenner/tail-of-dragon-car-classifier/actions/workflows/docker.yml)
+[![Portfolio story](https://img.shields.io/badge/portfolio-project_story-b23a2b)](https://www.chadd.blog/posts/car-type-detection/)
 
-The website is intentionally gallery-only. Visitors choose curated validation
-photos, refresh through a larger static photo pool, and see the model's full
-ranked probability weights. There is no upload endpoint, no public inference
-API, no database, and no user accounts.
+On a family trip to the Smoky Mountains, I noticed photographers along the Tail
+of the Dragon sorting thousands of road photos into galleries for different
+cars. That left me with a question: how much of that sorting could a model do?
 
-## Portfolio Features
+This repository is where that question ended up: an eight-class ConvNeXt vehicle
+classifier, a reproducible evaluation trail, and a React gallery that makes the
+model's good and bad decisions easy to inspect.
 
-- Refreshable validation gallery with full ranked class probabilities.
-- Interactive error analysis across high-confidence misses, low-margin misses,
-  random misses, low-confidence correct examples, and random correct examples.
-- Clickable top-confusion matrix with the images behind each confusion pair.
-- Grad-CAM explainability review for representative correct and incorrect
-  validation samples.
-- Technical case-study page covering the baseline, search space, final metrics,
-  and practical stopping rule.
-- Dataset quality dashboard summarizing final misses, confidence buckets, and
-  class-level error concentration.
-- Curated-only browser inference demo using ONNX Runtime Web. It runs the
-  exported model locally on gallery photos only and does not accept uploads.
-- Model card and supply-chain pages covering use boundaries, limitations, GHCR
-  image metadata, SBOM, and provenance.
+![The portfolio gallery showing a Honda prediction and ranked class probabilities](reports/verification/desktop.png)
 
-## Results
+## What I built
 
-The inherited checkpoint was a `convnext_tiny` model at 77.09% validation
-accuracy and 0.7701 macro F1. The rebuilt champion is:
+The project goes beyond a notebook and a headline accuracy number:
 
-| Model | Image size | Validation accuracy | Macro F1 | Top-3 accuracy |
-| --- | ---: | ---: | ---: | ---: |
-| `convnext_tiny` | 288 | 99.12% | 0.9912 | 99.77% |
+- A PyTorch training pipeline with controlled architecture searches,
+  checkpointing, class-balanced sampling, augmentation, and metric exports.
+- A held-out evaluation set of 23,980 images with class-level metrics,
+  confidence buckets, and manually reviewed errors.
+- Grad-CAM examples and clickable confusion pairs for seeing what the model used
+  and where it struggled.
+- An ONNX export with PyTorch parity checks and curated browser inference through
+  ONNX Runtime Web.
+- A static React/TypeScript gallery packaged with Docker and Caddy.
+- A GitHub Actions release path that builds the app and publishes a multi-platform
+  container with provenance and SBOM metadata.
 
-The validation split contains 23,980 images. The final model missed 210. Manual
-review of error sheets showed many of those misses are mislabeled, ambiguous,
-unreadable, distant, occluded, or contain multiple vehicles, so the practical
-target for this dataset is around 99.0-99.3% rather than an arbitrary 100%.
-See `reports/NOISE_REVIEW.md` for the stopping rule.
+The current gallery labels are `bmw`, `corvette`, `honda`, `jeep`, `miata`,
+`mustang`, `porsche`, and `vw`.
 
-## What Changed
+## Result
 
-- Preserved the existing train/validation split and removed duplicate filename
-  leakage from training.
-- Rebuilt training around `timm`, AMP, cosine learning rate, class-balanced
-  sampling, label smoothing, mixup, CutMix, RandAugment, random erasing, TTA,
-  checkpointing, metric exports, and reproducible manifests.
-- Compared ConvNeXt, EfficientNetV2, Swin, CoAtNet, MaxViT, and ViT/AugReg
-  candidates on a controlled search pass.
-- Exported the champion to ONNX and verified PyTorch/ONNX parity. The deployable
-  browser-demo ONNX assets are tracked under `web/public/model/` with Git LFS;
-  raw checkpoints and local experiment exports remain excluded from git.
-- Built a static React/TypeScript gallery served by Caddy in Docker.
+The starting ConvNeXt checkpoint reached 77.09% validation accuracy. The final
+model reached:
 
-## Repo Layout
+| Model | Image size | Validation images | Accuracy | Macro F1 | Top-3 accuracy |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| ConvNeXt Tiny | 288 | 23,980 | **99.12%** | **0.9912** | **99.77%** |
 
-```text
-training/              Training, report, export, and gallery generation scripts
-web/                   Static React + TypeScript app
-deploy/                Caddy runtime config and reverse-proxy example
-reports/               Final metrics and model documentation
-.github/workflows/     GHCR Docker image build workflow
-docker_deploy.yml      Self-host compose file
+That still left 210 misses, which turned out to be more useful than another
+decimal place. I reviewed error sheets for high-confidence mistakes, narrow
+decisions, and random misses. Many contained a bad label, an unreadable or
+distant car, heavy occlusion, or more than one vehicle. Based on that review, I
+treated roughly 99.0-99.3% as the practical ceiling for this version of the
+dataset and stopped optimizing the score.
+
+- [Read the dataset-noise review](reports/NOISE_REVIEW.md)
+- [Open the model card](reports/MODEL_CARD.md)
+- [See the experiment log](reports/EXPERIMENT_LOG.md)
+- [Inspect the classification report](reports/classification_report.txt)
+
+![Confusion matrix for the final eight-class model](reports/confusion_matrix.png)
+
+## How it fits together
+
+```mermaid
+flowchart LR
+  Photos["Curated road photos"] --> Train["PyTorch training and evaluation"]
+  Train --> Review["Metrics, errors, and Grad-CAM review"]
+  Train --> Export["ONNX export and parity check"]
+  Export --> Browser["React gallery with local browser inference"]
+  Review --> Browser
+  Browser --> Container["Caddy container published to GHCR"]
 ```
 
-The raw dataset, checkpoints, local tools, `.venv`, and training runs are
-intentionally excluded from git. The public ONNX model files needed for the
-curated browser demo are versioned through Git LFS.
+The public experience is deliberately narrow. Visitors can run inference on
+curated gallery images and explore saved analyses. There is no upload endpoint,
+public inference API, database, or user account system.
 
-## Local Training
+## Run the gallery
 
-Place the raw dataset next to this repo:
+Git LFS stores the ONNX model used by the browser demo. Install it before the
+first checkout, or pull the model assets afterward:
 
-```text
-project/
-  train_validation/
-    train/<class>/*.jpg
-    validation/<class>/*.jpg
-  tail-of-dragon-car-classifier/
-```
-
-Create the training environment:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements-train.txt
-```
-
-Run a smoke test:
-
-```powershell
-.\.venv\Scripts\python.exe training\train.py --data-dir ..\train_validation --mode smoke --output-dir runs\smoke
-```
-
-Run search and final training:
-
-```powershell
-.\.venv\Scripts\python.exe training\train.py --data-dir ..\train_validation --mode search --output-dir runs\search --device cuda --batch-size 32 --num-workers 4 --search-epochs 1 --search-train-fraction 0.20 --search-val-fraction 0.25
-.\.venv\Scripts\python.exe training\train.py --data-dir ..\train_validation --mode final --output-dir runs\final_convnext_tiny --device cuda --batch-size 32 --num-workers 4 --final-model convnext_tiny --final-img-size 288 --final-epochs 10
-```
-
-Generate reports from saved predictions:
-
-```powershell
-.\.venv\Scripts\python.exe training\report_from_predictions.py --predictions runs\final_convnext_tiny\final_00_convnext_tiny_288\best_val_predictions.json --output-dir runs\final_convnext_tiny\final_00_convnext_tiny_288
-```
-
-## Static Gallery Build
-
-```powershell
-.\.venv\Scripts\python.exe training\export_model.py --checkpoint runs\final_convnext_tiny\final_00_convnext_tiny_288\best.pt
-.\.venv\Scripts\python.exe training\build_gallery.py --data-dir ..\train_validation --checkpoint runs\final_convnext_tiny\final_00_convnext_tiny_288\best.pt --samples-per-class 24 --display-count 48
-.\.venv\Scripts\python.exe training\build_portfolio_assets.py --checkpoint runs\final_convnext_tiny\final_00_convnext_tiny_288\best.pt --predictions runs\final_convnext_tiny\final_00_convnext_tiny_288\best_val_predictions.json
+```bash
+git lfs install
+git lfs pull
 cd web
 npm ci
-npm run build
+npm run dev
 ```
 
-If you clone the repo, run `git lfs install` before checkout or `git lfs pull`
-after checkout so `web/public/model/champion.onnx.data` is the real model
-sidecar file rather than an LFS pointer.
-
-## Docker Deploy
+For the production container:
 
 ```bash
 docker compose -f docker_deploy.yml up -d
 ```
 
-The app listens on host port `8080` by default. Add the reverse-proxy shape from
-`deploy/Caddyfile.example` to your existing host Caddy instance.
+The app listens on host port `8080` by default. The example Caddy configuration
+in `deploy/Caddyfile.example` shows the reverse-proxy shape I use for deployment.
+
+## Reproduce the training workflow
+
+The raw dataset and local checkpoints are intentionally not committed. With the
+same `train/<class>` and `validation/<class>` directory structure, create an
+environment and run a smoke test:
+
+```bash
+python -m venv .venv
+# macOS/Linux: source .venv/bin/activate
+# Windows PowerShell: .\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements-train.txt
+python training/train.py \
+  --data-dir ../train_validation \
+  --mode smoke \
+  --output-dir runs/smoke
+```
+
+The longer search, final-training, report, and export commands are documented in
+[`training/README.md`](training/README.md). The scripts write manifests beside
+their artifacts so that a result can be traced back to its configuration.
+
+## Repository map
+
+```text
+training/              Training, report, export, and gallery-generation tools
+web/                   React/TypeScript portfolio app and curated ONNX demo
+reports/               Metrics, model card, error review, and final figures
+deploy/                Caddy runtime and reverse-proxy examples
+.github/workflows/     Validation and GHCR publishing
+docker_deploy.yml      Self-hosted deployment
+```
+
+## Data and image notes
+
+The model is specific to one road, one photo style, and eight broad gallery
+labels. It is not a general vehicle-recognition system and should not be used
+for identification, safety decisions, or fine-grained trim classification.
+
+The raw training dataset is excluded from git. The public gallery contains a
+small set of low-resolution, watermarked validation previews so the model's
+behavior can be reviewed. Those previews are not offered as a reusable image
+dataset, and the original photographers retain their rights to the source
+images.
+
+For the story behind the first version of the project, read
+[Classifying Cars on the Tail of the Dragon](https://www.chadd.blog/posts/car-type-detection/).
