@@ -9,10 +9,7 @@ matplotlib==3.10.9
 seaborn==0.13.2
 pillow==12.2.0
 optuna==4.9.0
-onnx==1.21.0
-onnxruntime==1.26.0
 tqdm==4.68.1
 rich==15.0.0
 albumentations==2.0.8
 opencv-python-headless==4.13.0.92
-

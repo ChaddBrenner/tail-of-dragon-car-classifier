@@ -6030,14 +6030,6 @@
     "total": 23980,
     "errors": 210,
     "accuracy": 0.9912427022518766,
-    "sheets": {
-      "errors_high_conf": "reports\\noise_review\\errors_high_conf.jpg",
-      "errors_random": "reports\\noise_review\\errors_random.jpg",
-      "errors_low_margin": "reports\\noise_review\\errors_low_margin.jpg",
-      "correct_low_conf": "reports\\noise_review\\correct_low_conf.jpg",
-      "correct_random": "reports\\noise_review\\correct_random.jpg",
-      "correct_high_conf": "reports\\noise_review\\correct_high_conf.jpg"
-    },
     "top_error_pairs": [
       {
         "true_class": "honda",
@@ -6207,65 +6199,5 @@
       "top_prob_lt_0_50": 62
     },
     "low_conf_correct_count": 90
-  },
-  "case_study": {
-    "baseline_accuracy": 0.7709,
-    "baseline_macro_f1": 0.7701,
-    "champion_accuracy": 0.9912427022518766,
-    "champion_macro_f1": 0.9912341247865801,
-    "practical_accuracy_ceiling": "99.0-99.3%",
-    "dataset_size": 110204,
-    "validation_size": 23980,
-    "search_models": [
-      "ConvNeXt",
-      "EfficientNetV2",
-      "Swin",
-      "CoAtNet",
-      "MaxViT",
-      "ViT/AugReg"
-    ]
-  },
-  "model_card": {
-    "architecture": "convnext_tiny",
-    "input_size": 288,
-    "intended_use": "Classify curated Tail of the Dragon car photos into eight broad gallery labels.",
-    "out_of_scope": "General vehicle recognition, safety-critical use, VIN/model identification, or user-uploaded image classification.",
-    "limitations": [
-      "Domain-specific road photography",
-      "Some labels are noisy or ambiguous",
-      "Some validation frames are distant, occluded, or contain multiple vehicles"
-    ],
-    "classes": [
-      "bmw",
-      "corvette",
-      "honda",
-      "jeep",
-      "miata",
-      "mustang",
-      "porsche",
-      "vw"
-    ]
-  },
-  "browser_inference": {
-    "enabled": true,
-    "model_path": "/model/champion.onnx",
-    "external_data_path": "/model/champion.onnx.data",
-    "runtime": "onnxruntime-web",
-    "input_size": 288,
-    "mean": [
-      0.485,
-      0.456,
-      0.406
-    ],
-    "std": [
-      0.229,
-      0.224,
-      0.225
-    ],
-    "note": "Runs on curated gallery images in the browser. No upload endpoint is exposed."
-  },
-  "supply_chain": {
-    "image": "ghcr.io/chaddbrenner/tail-of-dragon-car-classifier:latest",
-    "attestation": "GitHub Actions publishes provenance/SBOM attestations for the container image."
   }
 }

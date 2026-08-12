@@ -2,14 +2,6 @@
   "total": 23980,
   "errors": 210,
   "accuracy": 0.9912427022518766,
-  "sheets": {
-    "errors_high_conf": "reports\\noise_review\\errors_high_conf.jpg",
-    "errors_random": "reports\\noise_review\\errors_random.jpg",
-    "errors_low_margin": "reports\\noise_review\\errors_low_margin.jpg",
-    "correct_low_conf": "reports\\noise_review\\correct_low_conf.jpg",
-    "correct_random": "reports\\noise_review\\correct_random.jpg",
-    "correct_high_conf": "reports\\noise_review\\correct_high_conf.jpg"
-  },
   "top_error_pairs": [
     {
       "true_class": "honda",

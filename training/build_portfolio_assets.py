@@ -24,7 +24,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--predictions", type=Path, required=True)
     parser.add_argument("--web-public-dir", type=Path, default=Path("web/public"))
     parser.add_argument("--reports-dir", type=Path, default=Path("reports"))
-    parser.add_argument("--model-dir", type=Path, default=Path("models"))
     parser.add_argument("--seed", type=int, default=42)
     return parser.parse_args()
 
@@ -222,14 +221,10 @@ def main() -> None:
 
     analysis_dir = args.web_public_dir / "analysis"
     clean_dir(analysis_dir)
-    model_public = args.web_public_dir / "model"
-    clean_dir(model_public)
-    shutil.copy2(args.model_dir / "champion.onnx", model_public / "champion.onnx")
-    shutil.copy2(args.model_dir / "champion.onnx.data", model_public / "champion.onnx.data")
-
     metrics = json.loads((args.reports_dir / "final_metrics.json").read_text(encoding="utf-8"))
     top_confusions = json.loads((args.reports_dir / "top_confusions.json").read_text(encoding="utf-8"))
     noise_review = json.loads((args.reports_dir / "noise_review" / "review_summary.json").read_text(encoding="utf-8"))
+    noise_review.pop("sheets", None)
 
     confusions = build_confusion_examples(rows, analysis_dir)
     groups = build_error_groups(rows, analysis_dir, rng)
@@ -242,49 +237,6 @@ def main() -> None:
         "error_groups": groups,
         "gradcam": gradcams,
         "noise_review": noise_review,
-        "case_study": {
-            "baseline_accuracy": 0.7709,
-            "baseline_macro_f1": 0.7701,
-            "champion_accuracy": metrics["accuracy"],
-            "champion_macro_f1": metrics["macro_f1"],
-            "practical_accuracy_ceiling": "99.0-99.3%",
-            "dataset_size": 110204,
-            "validation_size": metrics["evaluated_samples"],
-            "search_models": [
-                "ConvNeXt",
-                "EfficientNetV2",
-                "Swin",
-                "CoAtNet",
-                "MaxViT",
-                "ViT/AugReg",
-            ],
-        },
-        "model_card": {
-            "architecture": checkpoint["model_name"],
-            "input_size": 288,
-            "intended_use": "Classify curated Tail of the Dragon car photos into eight broad gallery labels.",
-            "out_of_scope": "General vehicle recognition, safety-critical use, VIN/model identification, or user-uploaded image classification.",
-            "limitations": [
-                "Domain-specific road photography",
-                "Some labels are noisy or ambiguous",
-                "Some validation frames are distant, occluded, or contain multiple vehicles",
-            ],
-            "classes": checkpoint["class_names"],
-        },
-        "browser_inference": {
-            "enabled": True,
-            "model_path": "/model/champion.onnx",
-            "external_data_path": "/model/champion.onnx.data",
-            "runtime": "onnxruntime-web",
-            "input_size": 288,
-            "mean": [0.485, 0.456, 0.406],
-            "std": [0.229, 0.224, 0.225],
-            "note": "Runs on curated gallery images in the browser. No upload endpoint is exposed.",
-        },
-        "supply_chain": {
-            "image": "ghcr.io/chaddbrenner/tail-of-dragon-car-classifier:latest",
-            "attestation": "GitHub Actions publishes provenance/SBOM attestations for the container image.",
-        },
     }
     write_json(args.web_public_dir / "data" / "analysis.json", payload)
     write_json(args.reports_dir / "analysis_manifest.json", payload)

@@ -11,13 +11,6 @@
     "vw"
   ],
   "img_size": 288,
-  "source_checkpoint": "C:\\Users\\brenn\\OneDrive\\Desktop\\project\\tail-of-dragon-car-classifier\\runs\\final_convnext_tiny\\final_00_convnext_tiny_288\\best.pt",
-  "onnx_path": "C:\\Users\\brenn\\OneDrive\\Desktop\\project\\tail-of-dragon-car-classifier\\models\\champion.onnx",
-  "pytorch_copy": "C:\\Users\\brenn\\OneDrive\\Desktop\\project\\tail-of-dragon-car-classifier\\models\\champion.pt",
-  "quantized_path": null,
-  "quantized_ok": false,
-  "quantization_error": "[ShapeInferenceError] Inferred shape and existing shape differ in dimension 0: (768) vs (8)",
-  "torch_onnx_max_abs_diff": 3.337860107421875e-06,
   "checkpoint_metrics": {
     "val_loss": 0.10652255786270574,
     "accuracy": 0.9912427022518766,

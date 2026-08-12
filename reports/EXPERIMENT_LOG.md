@@ -42,24 +42,13 @@ One-epoch search on 20% train / 25% validation, preserving the existing split.
 Training used AMP, cosine LR, class-balanced sampling, label smoothing, mixup,
 CutMix, RandAugment, random erasing, crop-scale tuning, and horizontal-flip TTA.
 
-## Export
-
-- PyTorch checkpoint: local-only, ignored by git
-- ONNX export: local deploy artifact, with the curated browser-demo copy tracked
-  under `web/public/model/` using Git LFS because the external weight file is
-  about `111 MB`
-- PyTorch/ONNX max absolute logit difference on parity input: `3.34e-06`
-- Dynamic ONNX quantization was not kept because ONNX Runtime shape inference
-  failed for this ConvNeXt graph.
-
 ## Portfolio App Additions
 
-- Refreshable static validation gallery with full ranked probabilities
-- Interactive error review groups and clickable top-confusion examples
-- Grad-CAM overlays for representative correct and incorrect validation samples
-- Dataset quality dashboard and technical case-study view
-- Curated-only ONNX Runtime Web inference on gallery photos
-- Model-card and supply-chain views with GHCR provenance/SBOM workflow support
+- One scrolling model narrative with a refreshable validation explorer
+- Merged error review groups and clickable top-confusion examples
+- Draggable Grad-CAM comparisons for representative validation samples
+- Dataset-quality, scope, and stopping-rule reasoning integrated into the page
+- Responsive light/dark themes and uncropped 3:2 photography throughout
 
 ## Stopping Decision
 

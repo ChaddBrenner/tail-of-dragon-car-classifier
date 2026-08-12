@@ -18,8 +18,8 @@ Classify curated Tail of the Dragon car photos into eight broad car categories
 for a public portfolio demonstration.
 
 The deployed website is gallery-only. Visitors can inspect curated validation
-photos, ranked probabilities, error examples, Grad-CAM overlays, and a
-curated-only browser ONNX demo.
+photos, ranked probabilities, error examples, Grad-CAM overlays, and the
+dataset-quality review.
 
 ## Out of Scope
 
@@ -33,9 +33,8 @@ The raw dataset is local-only and excluded from git. The validation split is the
 existing held-out `train_validation/validation` split, with train/validation
 duplicate filename leakage removed from training.
 
-The public repo contains only curated static gallery and analysis assets plus
-the ONNX files needed by the browser demo. Raw training data, PyTorch
-checkpoints, and experiment runs remain excluded.
+The public repo contains only curated static gallery and analysis assets. Raw
+training data, PyTorch checkpoints, and experiment runs remain excluded.
 
 ## Training Notes
 
@@ -48,7 +47,7 @@ random erasing, cosine learning rate scheduling, AMP, and horizontal-flip TTA.
 
 The model was selected on full validation accuracy and macro F1 while preserving
 the original split for direct comparison to the inherited `77.09%` ConvNeXt
-baseline. ONNX export parity was checked against PyTorch before deployment.
+baseline.
 
 The site includes interactive error groups, top confusion pairs, class-level
 error counts, confidence buckets, and Grad-CAM overlays to make the result
@@ -64,11 +63,8 @@ The validation set contains some mislabeled, unreadable, distant, occluded, and
 multi-vehicle images. Manual review places the practical ceiling around
 `99.0-99.3%` accuracy for this dataset.
 
-Browser inference runs on curated static images only. It intentionally does not
-expose an upload flow or backend inference endpoint.
-
-## Deployment and Supply Chain
+## Deployment
 
 The static React app is built into a Caddy runtime container and published to
-GHCR. The GitHub Actions workflow checks out Git LFS assets and enables Docker
-Buildx provenance and SBOM metadata for pushed images.
+GHCR. The GitHub Actions workflow enables Docker Buildx provenance and SBOM
+metadata for pushed images.

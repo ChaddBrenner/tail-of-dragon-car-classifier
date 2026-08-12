@@ -23,9 +23,8 @@ The project goes beyond a notebook and a headline accuracy number:
   confidence buckets, and manually reviewed errors.
 - Grad-CAM examples and clickable confusion pairs for seeing what the model used
   and where it struggled.
-- An ONNX export with PyTorch parity checks and curated browser inference through
-  ONNX Runtime Web.
-- A static React/TypeScript gallery packaged with Docker and Caddy.
+- A static React/TypeScript portfolio experience with a photo explorer,
+  failure analysis, Grad-CAM comparisons, and the stopping-rule narrative.
 - A GitHub Actions release path that builds the app and publishes a multi-platform
   container with provenance and SBOM metadata.
 
@@ -61,24 +60,19 @@ dataset and stopped optimizing the score.
 flowchart LR
   Photos["Curated road photos"] --> Train["PyTorch training and evaluation"]
   Train --> Review["Metrics, errors, and Grad-CAM review"]
-  Train --> Export["ONNX export and parity check"]
-  Export --> Browser["React gallery with local browser inference"]
-  Review --> Browser
-  Browser --> Container["Caddy container published to GHCR"]
+  Review --> Gallery["React portfolio and validation explorer"]
+  Gallery --> Container["Caddy container published to GHCR"]
 ```
 
-The public experience is deliberately narrow. Visitors can run inference on
-curated gallery images and explore saved analyses. There is no upload endpoint,
-public inference API, database, or user account system.
+The public experience is deliberately narrow. Visitors can explore saved
+predictions and analysis for curated gallery images. There is no upload
+endpoint, public inference API, database, or user account system.
 
 ## Run the gallery
 
-Git LFS stores the ONNX model used by the browser demo. Install it before the
-first checkout, or pull the model assets afterward:
+A plain clone is enough; no large-file extension or model download is required:
 
 ```bash
-git lfs install
-git lfs pull
 cd web
 npm ci
 npm run dev
@@ -110,7 +104,7 @@ python training/train.py \
   --output-dir runs/smoke
 ```
 
-The longer search, final-training, report, and export commands are documented in
+The longer search, final-training, and report commands are documented in
 [`training/README.md`](training/README.md). The scripts write manifests beside
 their artifacts so that a result can be traced back to its configuration.
 
@@ -118,7 +112,7 @@ their artifacts so that a result can be traced back to its configuration.
 
 ```text
 training/              Training, report, export, and gallery-generation tools
-web/                   React/TypeScript portfolio app and curated ONNX demo
+web/                   React/TypeScript portfolio app and curated analysis
 reports/               Metrics, model card, error review, and final figures
 deploy/                Caddy runtime and reverse-proxy examples
 .github/workflows/     Validation and GHCR publishing

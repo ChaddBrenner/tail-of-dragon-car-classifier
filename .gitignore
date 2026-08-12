@@ -17,10 +17,6 @@ tools/
 *.pth
 *.ckpt
 
-# Model exports are reproducible but too large for a normal git push.
-models/*.onnx
-models/*.data
-
 # Frontend/build output
 node_modules/
 web/dist/
