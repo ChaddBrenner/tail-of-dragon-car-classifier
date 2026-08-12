@@ -32,11 +32,3 @@ export function ShuffleIcon({ size = 16, className }: IconProps) {
     </svg>
   );
 }
-
-export function ArrowIcon({ size = 16, className }: IconProps) {
-  return (
-    <svg aria-hidden="true" className={className} fill="none" height={size} viewBox="0 0 24 24" width={size}>
-      <path d="m9 18 6-6-6-6" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" />
-    </svg>
-  );
-}

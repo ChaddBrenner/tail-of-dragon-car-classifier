@@ -5,16 +5,14 @@ import { CLASS_NAMES, formatNumber, pickGalleryPage } from "./lib";
 import { DataStory } from "./sections/DataStory";
 import { Explorer } from "./sections/Explorer";
 import { FailureAnalysis } from "./sections/FailureAnalysis";
-import { GradCam } from "./sections/GradCam";
 import { Hero } from "./sections/Hero";
 import type { AnalysisData, AppData, Metrics } from "./types";
 
-const DEFAULT_DISPLAY_COUNT = 48;
+const DEFAULT_DISPLAY_COUNT = 16;
 const sectionLinks = [
   { id: "explore", label: "Explore" },
   { id: "failures", label: "Where it fails" },
-  { id: "explain", label: "What it looks at" },
-  { id: "data", label: "Data" }
+  { id: "data", label: "Why I stopped" }
 ];
 
 const verifiedMetrics: Metrics = {
@@ -85,7 +83,7 @@ export function App() {
   }, [analysis]);
 
   const classes = analysis?.metrics.class_names ?? data?.model.classes ?? CLASS_NAMES;
-  const displayCount = data?.gallery?.display_count ?? DEFAULT_DISPLAY_COUNT;
+  const displayCount = DEFAULT_DISPLAY_COUNT;
   const displayedSamples = useMemo(
     () => pickGalleryPage(data?.samples ?? [], classes, displayCount, galleryPage),
     [classes, data?.samples, displayCount, galleryPage]
@@ -113,7 +111,7 @@ export function App() {
           <ThemeToggle />
           <a className="githubLink" href="https://github.com/ChaddBrenner/tail-of-dragon-car-classifier">
             <GithubIcon />
-            GitHub
+            <span>GitHub</span>
           </a>
         </div>
       </header>
@@ -153,7 +151,6 @@ export function App() {
         {analysis ? (
           <>
             <FailureAnalysis analysis={analysis} classes={classes} />
-            <GradCam samples={analysis.gradcam} />
             <DataStory review={analysis.noise_review} />
           </>
         ) : (
@@ -167,7 +164,8 @@ export function App() {
       <footer className="siteFooter">
         <div>
           <strong>ConvNeXt-Tiny</strong>
-          <span>epoch {data?.model.best_epoch ?? 10}</span>
+          <span>288px</span>
+          <span>best epoch {data?.model.best_epoch ?? 10}</span>
           <span>{formatNumber(metrics.evaluated_samples)} validation images</span>
         </div>
         <nav aria-label="Project artifacts">
@@ -176,7 +174,7 @@ export function App() {
           <a href="https://github.com/ChaddBrenner/tail-of-dragon-car-classifier">GitHub</a>
           <a href="https://www.chadd.blog/posts/car-type-detection/">Project story</a>
         </nav>
-        <p>Validation previews are watermarked kilboy.com photographs; original photographers retain their rights.</p>
+        <p>The validation previews are watermarked photographs from killboy.com. The original photographers keep their rights.</p>
       </footer>
     </div>
   );

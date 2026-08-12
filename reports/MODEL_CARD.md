@@ -18,8 +18,7 @@ Classify curated Tail of the Dragon car photos into eight broad car categories
 for a public portfolio demonstration.
 
 The deployed website is gallery-only. Visitors can inspect curated validation
-photos, ranked probabilities, error examples, Grad-CAM overlays, and the
-dataset-quality review.
+photos, ranked probabilities, error examples, and the dataset-quality review.
 
 ## Out of Scope
 
@@ -50,8 +49,8 @@ the original split for direct comparison to the inherited `77.09%` ConvNeXt
 baseline.
 
 The site includes interactive error groups, top confusion pairs, class-level
-error counts, confidence buckets, and Grad-CAM overlays to make the result
-auditable instead of only reporting one headline number.
+error counts, and confidence buckets to make the result auditable instead of
+only reporting one headline number.
 
 ## Limitations
 

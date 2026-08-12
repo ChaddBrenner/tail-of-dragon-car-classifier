@@ -24,29 +24,6 @@ export const CLASS_COLORS: Record<string, string> = {
   vw: "#8994D8"
 };
 
-export const GROUP_COPY: Record<string, { label: string; detail: string }> = {
-  high_confidence_misses: {
-    label: "High-confidence misses",
-    detail: "The most confident misses often expose label noise, occlusion, or genuinely ambiguous silhouettes."
-  },
-  low_margin_misses: {
-    label: "Low-margin misses",
-    detail: "The narrowest decisions concentrate around visually similar silhouettes and ambiguous frames."
-  },
-  random_misses: {
-    label: "Random misses",
-    detail: "A representative slice shows that the remaining failures are not one single kind of mistake."
-  },
-  low_confidence_correct: {
-    label: "Low-confidence correct",
-    detail: "Ninety correct calls were still uncertain—the useful flip side of the same ambiguity."
-  },
-  random_correct: {
-    label: "Random correct",
-    detail: "Representative correct predictions keep the error review grounded in the full validation set."
-  }
-};
-
 export function classLabel(value: string) {
   return CLASS_LABELS[value] ?? value.replaceAll("_", " ");
 }

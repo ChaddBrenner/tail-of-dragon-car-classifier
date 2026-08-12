@@ -21,10 +21,9 @@ The project goes beyond a notebook and a headline accuracy number:
   checkpointing, class-balanced sampling, augmentation, and metric exports.
 - A held-out evaluation set of 23,980 images with class-level metrics,
   confidence buckets, and manually reviewed errors.
-- Grad-CAM examples and clickable confusion pairs for seeing what the model used
-  and where it struggled.
+- Clickable confusion pairs for seeing where the model struggled.
 - A static React/TypeScript portfolio experience with a photo explorer,
-  failure analysis, Grad-CAM comparisons, and the stopping-rule narrative.
+  failure analysis, and the stopping-rule narrative.
 - A GitHub Actions release path that builds the app and publishes a multi-platform
   container with provenance and SBOM metadata.
 
@@ -59,7 +58,7 @@ dataset and stopped optimizing the score.
 ```mermaid
 flowchart LR
   Photos["Curated road photos"] --> Train["PyTorch training and evaluation"]
-  Train --> Review["Metrics, errors, and Grad-CAM review"]
+  Train --> Review["Metrics and error review"]
   Review --> Gallery["React portfolio and validation explorer"]
   Gallery --> Container["Caddy container published to GHCR"]
 ```

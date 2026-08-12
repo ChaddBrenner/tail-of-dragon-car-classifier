@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { ShuffleIcon } from "../components/Icons";
 import { Photo, PhotoSkeleton } from "../components/Photo";
 import { ProbabilityBars } from "../components/ProbabilityBars";
@@ -16,11 +16,6 @@ type ExplorerProps = {
 export function Explorer({ onSelect, onShuffle, samples, selected, totalSamples }: ExplorerProps) {
   const railRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (!selected) return;
-    railRef.current?.querySelector<HTMLElement>(`[data-sample-id="${selected.id}"]`)?.scrollIntoView({ block: "nearest" });
-  }, [selected]);
-
   function handleKeyDown(event: React.KeyboardEvent<HTMLDivElement>) {
     if (!selected || !["ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight"].includes(event.key)) return;
     event.preventDefault();
@@ -33,11 +28,11 @@ export function Explorer({ onSelect, onShuffle, samples, selected, totalSamples 
   const correct = selected?.true_class === selected?.top_prediction;
 
   return (
-    <section className="section explorerSection" id="explore">
+    <section className="section" id="explore">
       <div className="sectionHeading">
         <div>
-          <h2>Pick a photo. See what the model saw.</h2>
-          <p>Use the thumbnails or arrow keys to move through curated held-out examples.</p>
+          <h2>Pick a photo and see what the model predicted</h2>
+          <p>These are sixteen held-out photographs, two from each class. The arrow keys move between them.</p>
         </div>
         <button className="quietButton" disabled={totalSamples <= samples.length} onClick={onShuffle} type="button">
           <ShuffleIcon />
@@ -83,14 +78,14 @@ export function Explorer({ onSelect, onShuffle, samples, selected, totalSamples 
           <aside className="predictionPanel" aria-live="polite">
             <div className="predictionSummary">
               <div>
-                <span>Known label</span>
-                <strong>{classLabel(selected.true_class)}</strong>
-              </div>
-              <div>
                 <span>Prediction</span>
                 <strong>{classLabel(selected.top_prediction)}</strong>
               </div>
-              <b>{pct(selected.top_probability, 1)}</b>
+              <b className={correct ? "correctText" : "missText"}>{pct(selected.top_probability, 1)}</b>
+              <div>
+                <span>Known label</span>
+                <strong>{classLabel(selected.true_class)}</strong>
+              </div>
             </div>
             <ProbabilityBars correct={correct} probabilities={selected.probabilities} />
           </aside>

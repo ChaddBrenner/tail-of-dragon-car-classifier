@@ -14,9 +14,6 @@ export type Sample = {
 
 export type AnalysisSample = Sample & {
   margin?: number;
-  original?: string;
-  heatmap?: string;
-  explanation?: string;
 };
 
 export type Metrics = {
@@ -57,7 +54,6 @@ export type AnalysisData = {
   top_confusions: TopConfusion[];
   confusion_examples: ConfusionExample[];
   error_groups: Record<string, AnalysisSample[]>;
-  gradcam: AnalysisSample[];
   noise_review: NoiseReview;
 };
 
