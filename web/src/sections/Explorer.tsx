@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { ShuffleIcon } from "../components/Icons";
 import { Photo, PhotoSkeleton } from "../components/Photo";
 import { ProbabilityBars } from "../components/ProbabilityBars";
-import { classLabel, pct } from "../lib";
+import { classLabel, gallerySrcSet, pct, thumbFor } from "../lib";
 import type { Sample } from "../types";
 
 type ExplorerProps = {
@@ -61,7 +61,12 @@ export function Explorer({ onSelect, onShuffle, samples, selected, totalSamples 
                 role="option"
                 type="button"
               >
-                <Photo alt="" src={sample.image} />
+                <Photo
+                  alt=""
+                  sizes="(max-width: 720px) 29vw, 152px"
+                  src={thumbFor(sample.image)}
+                  srcSet={gallerySrcSet(sample.image)}
+                />
                 <span>{classLabel(sample.true_class)}</span>
               </button>
             ))}

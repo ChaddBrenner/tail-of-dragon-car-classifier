@@ -46,8 +46,9 @@ export function FailureAnalysis({ analysis, classes }: { analysis: AnalysisData;
         <div>
           <h2>The 210 misses are not spread evenly</h2>
           <p>
-            Honda and BMW account for 117 of them. Jeep accounts for six. Select any cell to see the photographs behind
-            that confusion.
+            Each row is what a photograph actually was. Each column is what the model guessed. Every filled cell off
+            the diagonal is a mistake. Honda and BMW account for 117 of them. Jeep accounts for six. Select any cell to
+            see the photographs behind that confusion.
           </p>
         </div>
       </div>
@@ -85,6 +86,7 @@ export function FailureAnalysis({ analysis, classes }: { analysis: AnalysisData;
                       aria-label={`${classLabel(actual)} correctly predicted`}
                       className="heatCell diagonal"
                       key={key}
+                      role="img"
                     />
                   );
                 }

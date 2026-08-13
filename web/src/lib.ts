@@ -28,6 +28,30 @@ export function classLabel(value: string) {
   return CLASS_LABELS[value] ?? value.replaceAll("_", " ");
 }
 
+/**
+ * Every gallery photo has a 300x200 derivative under /thumbs/. The sources are
+ * all 600x400, so rendering one in the ~120px rail downloaded roughly 25 times
+ * the pixels it displayed.
+ */
+export function thumbFor(src: string) {
+  return derivative(src, "thumbs");
+}
+
+/** 480x320. Sits between the 360w thumb and the 600w original. */
+export function mediumFor(src: string) {
+  return derivative(src, "medium");
+}
+
+function derivative(src: string, dir: string) {
+  const cut = src.lastIndexOf("/");
+  return cut === -1 ? src : `${src.slice(0, cut)}/${dir}/${src.slice(cut + 1)}`;
+}
+
+/** The three candidates every gallery photo ships in. */
+export function gallerySrcSet(src: string) {
+  return `${thumbFor(src)} 360w, ${mediumFor(src)} 480w, ${src} 600w`;
+}
+
 export function pct(value: number | undefined, digits = 1) {
   return `${((value ?? 0) * 100).toFixed(digits)}%`;
 }

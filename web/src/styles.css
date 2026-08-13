@@ -155,8 +155,7 @@ h3 {
 .probabilityBars,
 .matrixGrid,
 .errorCard dl,
-.confidenceBars,
-.lineage {
+.confidenceBars {
   font-variant-numeric: tabular-nums;
 }
 
@@ -267,16 +266,15 @@ h3 {
 
 /* ---------- Hero ---------- */
 
+/* Stacked, so the photographs get the full content width rather than half. */
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  align-items: start;
-  gap: var(--s7);
+  gap: var(--s6);
   padding-block: var(--s7) var(--s6);
 }
 
 .heroLead h1 {
-  max-width: 22ch;
+  max-width: 26ch;
   font-size: var(--t-xl);
   line-height: 1.16;
 }
@@ -341,10 +339,10 @@ h3 {
   letter-spacing: -0.035em;
 }
 
-/* Static 2x2. No scroll. */
+/* One photograph per class, across the full width. No scroll. */
 .heroPhotoGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
   gap: var(--s2);
 }
 
@@ -891,43 +889,30 @@ button.heatCell {
   color: var(--correct);
 }
 
-.lineage {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--s7);
-  margin: 0 0 var(--s6);
-  padding: 0 0 var(--s5);
-  border-bottom: 1px solid var(--border);
-  list-style: none;
-}
-
-.lineage li {
-  position: relative;
-  display: grid;
-  align-content: start;
-  gap: 2px;
-}
-
-.lineage li + li::before {
-  position: absolute;
-  top: 4px;
-  left: calc(var(--s7) / -2);
-  color: var(--faint);
-  content: "\2192";
-  transform: translateX(-50%);
-}
-
-.lineage strong {
+/* Subheads break the closing prose into scannable pieces. */
+.dataProse h3 {
+  max-width: var(--measure);
+  margin: var(--s6) 0 var(--s3);
   color: var(--ink);
-  font-size: var(--t-md);
-  font-weight: 630;
-  letter-spacing: -0.03em;
+  font-size: var(--t-base);
+  font-weight: 620;
+  letter-spacing: -0.01em;
 }
 
-.lineage span {
-  color: var(--muted);
-  font-size: var(--t-sm);
-  line-height: 1.4;
+.dataProse > h3:first-child {
+  margin-top: 0;
+}
+
+.resumeConditions {
+  max-width: var(--measure);
+  margin: 0 0 var(--s4);
+  padding-left: var(--s4);
+  font-size: var(--t-base);
+  line-height: 1.7;
+}
+
+.resumeConditions li {
+  margin-bottom: var(--s1);
 }
 
 .chartCard {
@@ -1128,9 +1113,8 @@ button.heatCell {
     --s8: 56px;
   }
 
-  .hero {
-    grid-template-columns: 1fr;
-    gap: var(--s6);
+  .heroPhotoGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .heroLead h1 {
@@ -1139,15 +1123,6 @@ button.heatCell {
 
   .dataGrid {
     grid-template-columns: 1fr;
-  }
-
-  .lineage {
-    grid-template-columns: 1fr;
-    gap: var(--s3);
-  }
-
-  .lineage li + li::before {
-    content: none;
   }
 
   .siteFooter {
@@ -1224,9 +1199,12 @@ button.heatCell {
     --gutter: 16px;
   }
 
-  .errorGrid,
-  .heroPhotoGrid {
+  .errorGrid {
     grid-template-columns: 1fr;
+  }
+
+  .heroPhotoGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .thumbnailRail {

@@ -1,20 +1,25 @@
-import { classLabel, formatNumber, pct } from "../lib";
+import { classLabel, formatNumber, gallerySrcSet, pct } from "../lib";
 import type { Metrics, Sample } from "../types";
 import { Photo, PhotoSkeleton } from "../components/Photo";
 
 export function Hero({ classes, metrics, samples }: { classes: string[]; metrics: Metrics; samples: Sample[] }) {
-  const heroPhotos = classes
+  // One photograph per class, so the eight labels are visible before any of the
+  // numbers are. This is the fastest way to explain what the model sorts.
+  const classPhotos = classes
     .map((className) => samples.find((sample) => sample.true_class === className))
-    .filter((sample): sample is Sample => Boolean(sample))
-    .slice(0, 4);
+    .filter((sample): sample is Sample => Boolean(sample));
+
+  const evaluated = metrics.evaluated_samples ?? 23980;
+  const missed = metrics.error_count ?? 210;
 
   return (
     <section className="hero" id="top">
       <div className="heroLead">
-        <h1>I trained a model to sort Tail of the Dragon photographs into eight car classes.</h1>
+        <h1>A road with 318 curves, and a photograph of every car that drives it.</h1>
         <p>
-          Photographers along the road shoot passing cars and sell the prints to the drivers. Every image has to be
-          sorted into the right gallery first. This model does that sorting.
+          Businesses along the Tail of the Dragon shoot the cars coming through and sell the prints back to the
+          drivers. Someone has to sort thousands of those photographs into a gallery per car. I trained a model to do
+          that sorting.
         </p>
 
         <p className="accuracyFigure">
@@ -22,38 +27,40 @@ export function Hero({ classes, metrics, samples }: { classes: string[]; metrics
           <span className="figureLabel">accuracy</span>
         </p>
         <p className="figureCaption">
-          Measured on a held-out validation split that the model never saw during training.
+          That is {formatNumber(missed)} wrong out of {formatNumber(evaluated)} photographs the model had never seen.
         </p>
 
-        <dl className="metricStrip" aria-label="Model metrics">
+        <dl className="metricStrip" aria-label="How the dataset was built">
           <div>
-            <dt>Macro F1</dt>
-            <dd>{(metrics.macro_f1 ?? 0).toFixed(4)}</dd>
+            <dt>Photographs collected</dt>
+            <dd>110,204</dd>
           </div>
           <div>
-            <dt>Top-3</dt>
-            <dd>{pct(metrics.top3_accuracy, 2)}</dd>
+            <dt>Used for training</dt>
+            <dd>86,197</dd>
           </div>
           <div>
-            <dt>Held-out images</dt>
-            <dd>{formatNumber(metrics.evaluated_samples)}</dd>
+            <dt>Held back for testing</dt>
+            <dd>{formatNumber(evaluated)}</dd>
           </div>
         </dl>
       </div>
 
-      <div className="heroPhotoGrid" aria-label="Validation photo examples">
-        {heroPhotos.length
-          ? heroPhotos.map((sample, index) => (
+      <div className="heroPhotoGrid" aria-label="One validation photograph from each of the eight classes">
+        {classPhotos.length
+          ? classPhotos.map((sample, index) => (
               <figure key={sample.id}>
                 <Photo
-                  alt={`${classLabel(sample.true_class)} on the Tail of the Dragon`}
-                  eager={index < 2}
+                  alt={`A ${classLabel(sample.true_class)} on the Tail of the Dragon`}
+                  eager={index < 4}
+                  sizes="(max-width: 520px) 44vw, (max-width: 900px) 22vw, 155px"
                   src={sample.image}
+                  srcSet={gallerySrcSet(sample.image)}
                 />
                 <figcaption>{classLabel(sample.true_class)}</figcaption>
               </figure>
             ))
-          : Array.from({ length: 4 }, (_, index) => <PhotoSkeleton key={index} />)}
+          : Array.from({ length: 8 }, (_, index) => <PhotoSkeleton key={index} />)}
       </div>
     </section>
   );

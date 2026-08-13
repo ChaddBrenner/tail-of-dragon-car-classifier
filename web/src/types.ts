@@ -53,7 +53,6 @@ export type AnalysisData = {
   metrics: Metrics;
   top_confusions: TopConfusion[];
   confusion_examples: ConfusionExample[];
-  error_groups: Record<string, AnalysisSample[]>;
   noise_review: NoiseReview;
 };
 

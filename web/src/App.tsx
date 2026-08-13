@@ -166,6 +166,8 @@ export function App() {
           <strong>ConvNeXt-Tiny</strong>
           <span>288px</span>
           <span>best epoch {data?.model.best_epoch ?? 10}</span>
+          <span>macro F1 {(metrics.macro_f1 ?? 0).toFixed(4)}</span>
+          <span>top-3 {((metrics.top3_accuracy ?? 0) * 100).toFixed(2)}%</span>
           <span>{formatNumber(metrics.evaluated_samples)} validation images</span>
         </div>
         <nav aria-label="Project artifacts">

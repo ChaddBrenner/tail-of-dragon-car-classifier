@@ -45,7 +45,7 @@ CutMix, RandAugment, random erasing, crop-scale tuning, and horizontal-flip TTA.
 ## Portfolio App Additions
 
 - One scrolling model narrative with a refreshable validation explorer
-- Merged error review groups and clickable top-confusion examples
+- Full confusion matrix with clickable top-confusion examples
 - Dataset-quality, scope, and stopping-rule reasoning integrated into the page
 - Responsive light/dark themes and uncropped 3:2 photography throughout
 

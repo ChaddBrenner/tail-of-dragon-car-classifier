@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-import random
 import shutil
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -16,7 +15,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--predictions", type=Path, required=True)
     parser.add_argument("--web-public-dir", type=Path, default=Path("web/public"))
     parser.add_argument("--reports-dir", type=Path, default=Path("reports"))
-    parser.add_argument("--seed", type=int, default=42)
     return parser.parse_args()
 
 
@@ -90,25 +88,8 @@ def build_confusion_examples(rows: list[dict], output_dir: Path) -> list[dict]:
     return confusions
 
 
-def build_error_groups(rows: list[dict], output_dir: Path, rng: random.Random) -> dict:
-    errors = [row for row in rows if row["true_class"] != row["pred_class"]]
-    correct = [row for row in rows if row["true_class"] == row["pred_class"]]
-    groups = {
-        "high_confidence_misses": sorted(errors, key=lambda r: row_probability(r, r["pred_class"]), reverse=True)[:12],
-        "low_margin_misses": sorted(errors, key=margin)[:12],
-        "random_misses": rng.sample(errors, min(12, len(errors))),
-        "low_confidence_correct": sorted(correct, key=lambda r: row_probability(r, r["pred_class"]))[:12],
-        "random_correct": rng.sample(correct, min(12, len(correct))),
-    }
-    return {
-        name: [row_to_public(row, output_dir / "groups" / name, name, i) for i, row in enumerate(group_rows, start=1)]
-        for name, group_rows in groups.items()
-    }
-
-
 def main() -> None:
     args = parse_args()
-    rng = random.Random(args.seed)
     rows = json.loads(args.predictions.read_text(encoding="utf-8"))
 
     analysis_dir = args.web_public_dir / "analysis"
@@ -119,13 +100,14 @@ def main() -> None:
     noise_review.pop("sheets", None)
 
     confusions = build_confusion_examples(rows, analysis_dir)
-    groups = build_error_groups(rows, analysis_dir, rng)
 
     payload = {
         "metrics": metrics,
-        "top_confusions": top_confusions[:20],
+        # Every non-zero pair, not a top-N slice. Truncating here left the
+        # rendered matrix accounting for 172 of the 210 misses, with whole rows
+        # blank for classes that do have errors.
+        "top_confusions": top_confusions,
         "confusion_examples": confusions,
-        "error_groups": groups,
         "noise_review": noise_review,
     }
     write_json(args.web_public_dir / "data" / "analysis.json", payload)
