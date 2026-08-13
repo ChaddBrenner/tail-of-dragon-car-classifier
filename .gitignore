@@ -29,3 +29,8 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+
+# iCloud Drive conflict copies. Working checkouts under ~/Documents are synced,
+# and rapid rewrites (image derivative passes) make it produce "name 2.ext".
+* 2.*
+* 3.*

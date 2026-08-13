@@ -1,5 +1,6 @@
 # Tail of the Dragon Car Classifier
 
+[![Live site](https://img.shields.io/badge/live-carclassifier.chadd.blog-1f9d6b)](https://carclassifier.chadd.blog/)
 [![Build and publish](https://github.com/ChaddBrenner/tail-of-dragon-car-classifier/actions/workflows/docker.yml/badge.svg)](https://github.com/ChaddBrenner/tail-of-dragon-car-classifier/actions/workflows/docker.yml)
 [![Portfolio story](https://img.shields.io/badge/portfolio-project_story-b23a2b)](https://www.chadd.blog/posts/car-type-detection/)
 
@@ -11,7 +12,9 @@ This repository is where that question ended up: an eight-class ConvNeXt vehicle
 classifier, a reproducible evaluation trail, and a React gallery that makes the
 model's good and bad decisions easy to inspect.
 
-![The portfolio gallery showing a Honda prediction and ranked class probabilities](reports/verification/desktop.png)
+**[See it running at carclassifier.chadd.blog](https://carclassifier.chadd.blog/)**
+
+![The site header showing one validation photograph from each of the eight classes, the accuracy figure, and how the dataset was split](reports/verification/desktop.png)
 
 ## What I built
 
@@ -39,12 +42,18 @@ model reached:
 | --- | ---: | ---: | ---: | ---: | ---: |
 | ConvNeXt Tiny | 288 | 23,980 | **99.12%** | **0.9912** | **99.77%** |
 
-That still left 210 misses, which turned out to be more useful than another
-decimal place. I reviewed error sheets for high-confidence mistakes, narrow
-decisions, and random misses. Many contained a bad label, an unreadable or
-distant car, heavy occlusion, or more than one vehicle. Based on that review, I
-treated roughly 99.0-99.3% as the practical ceiling for this version of the
-dataset and stopped optimizing the score.
+That still left 210 misses, and I read every one of them. Many are not model
+failures. Several are VW-labeled photographs that look like BMW sedans, and
+Honda-labeled photographs that look like VW hatchbacks. The rest are mostly
+distant cars, heavy shadows, partial crops, and frames with more than one
+plausible vehicle in them.
+
+The labels are part of the problem. They come from how the photography business
+sorts its galleries, not from a clean taxonomy, so some manufacturers are
+grouped together and a few roadsters and muscle cars have no honest home among
+the eight. Based on that review I set the practical ceiling for this version of
+the dataset at 99.0% to 99.3% and stopped there. That is a practical stopping
+point, not a mathematical proof.
 
 - [Read the dataset-noise review](reports/NOISE_REVIEW.md)
 - [Open the model card](reports/MODEL_CARD.md)
